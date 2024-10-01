@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pace.css">
+    <script src="js/jquery.js"></script>
+    <title>Inicio Iscjoseluischavezg</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col"></div>
+            <div class="col text-end">
+                <a href="index.php" type="button" class="btn btn-outline-primary mb-1">
+                    <svg class="bi" width="18" height="18" fill="currentColor">
+                        <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
+                    </svg>&nbsp;&nbsp; Inicio de Sesion
+                </a>
+                <a href="index.html" type="button" class="btn btn-outline-primary mb-1">
+                    <svg class="bi" width="18" height="18" fill="currentColor">
+                        <use xlink:href="library/bicons/bootstrap-icons.svg#question-lg" />
+                    </svg>&nbsp;&nbsp; Boton de Ayuda
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center mt-2">
+            <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
+                <div id="alert-container"></div>
+                <div class="row mt-3">
+                    <h1 class="display-6 fs-5 text-center">Registro de <span class="text-primary">usuario</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
+                <form action="" method="post" class="needs-validation" novalidate>
+                    <div class="row mt-2">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="row mt-2">
+                                <img src="img/registro.png" alt="registro" style="width: 400px;" class="mx-auto">
+                            </div>
+                            <div class="row mt-2">
+                                <input type="text" name="Nombre" id="nombre" class="form-control" placeholder="Nombre"
+                                    required>
+                                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="text" name="Apaterno" id="apaterno" class="form-control"
+                                    placeholder="Apellido Paterno" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu Apallido paterno.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="text" name="Amaterno" id="amaterno" class="form-control"
+                                    placeholder="Apellido Materno" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu Apellido materno.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="tel" name="TelefonoUser" id="telefonouser" class="form-control"
+                                    placeholder="Telefono" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu Telefono.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="email" name="EmailUser" id="emailuser" class="form-control"
+                                    placeholder="Email" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu Email.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <select class="form-select  mb-1" name="Tusuario" required>
+                                    <option selected>Como deseas registrate en nuestra plataforma</option>
+                                    <option value="1">Paciente</option>
+                                    <option value="2">Especialista</option>
+                                    <option value="3">Tutor</option>
+                                </select>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="UserNick" name="userNick" id="usernick" class="form-control"
+                                    placeholder="Nombre de Usuario" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu Nombre de usuario.</div>
+                            </div>
+                            <div class="row mt-2">
+                                <input type="password" name="passUser" id="VerPassWord" class="form-control"
+                                    placeholder="Password" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu password.</div>
+                            </div>
+                            <div class="row mt-2">
+                            <div class="col-sm-6 col-md-6 col-lg-6"></div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="VerPass" class="form-check-input" onclick="verPass(this);">
+                                    <label for="VerPass" class="form-check-label">Visualizar Password</label>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row mt-2">
+                                <input type="submit" value="Registrar" name="btnRegistrar"
+                                    class="btn btn-sm btn-primary">
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer  - Bootstrap menu -->
+    <?php include 'modulo/footer.php'; ?>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pace.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+    <script>
+    function verPass(ck) {
+        if (ck.checked)
+        $('#VerPassWord').attr("type", "text");
+        else
+        $('#VerPassWord').attr("type", "password");
+        }
+    </script>
+</body>
+
+</html>
