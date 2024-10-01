@@ -1,3 +1,7 @@
+<?php 
+    include 'include/querys.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace.css">
     <script src="js/jquery.js"></script>
-    <title>Inicio Iscjoseluischavezg</title>
+    <title>Registro de Usuario | Iscjoseluischavezg</title>
 </head>
 
 <body>
@@ -33,7 +37,7 @@
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
                 <div id="alert-container"></div>
                 <div class="row mt-3">
-                    <h1 class="display-6 fs-5 text-center">Registro de <span class="text-primary">usuario</span></h1>
+                    <h1 class="display-6 fs-5 text-center">Registro de <span class="text-primary">usuario MindCare</span></h1>
                 </div>
             </div>
         </div>
@@ -73,9 +77,9 @@
                             <div class="row mt-2">
                                 <select class="form-select  mb-1" name="Tusuario" required>
                                     <option selected>Como deseas registrate en nuestra plataforma</option>
-                                    <option value="1">Paciente</option>
-                                    <option value="2">Especialista</option>
-                                    <option value="3">Tutor</option>
+                                    <?php while($TiposU = $ETusuariosC->fetch_assoc()){ ?>
+                                    <option value="<?php echo $TiposU['Id_Tusuario']; ?>"><?php echo $TiposU['NomTuser']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="row mt-2">
@@ -89,7 +93,12 @@
                                     <div class="invalid-feedback">Por favor ingresa tu password.</div>
                             </div>
                             <div class="row mt-2">
-                            <div class="col-sm-6 col-md-6 col-lg-6"></div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="aceptarTerminos" class="form-check-input" onclick="">
+                                    <label for="VerPass" class="form-check-label"><a href="#" data-bs-toggle="modal" data-bs-target="#AvisoPrivacidad" class="text-decoration-none">Acepta Aviso de Privacidad</a></label>
+                                </div>
+                            </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
                                 <div class="form-check form-switch">
                                     <input type="checkbox" id="VerPass" class="form-check-input" onclick="verPass(this);">
@@ -98,8 +107,8 @@
                             </div>
                         </div>
                             <div class="row mt-2">
-                                <input type="submit" value="Registrar" name="btnRegistrar"
-                                    class="btn btn-sm btn-primary">
+                                <input type="submit" value="Registrar" name="btnRegistrar" id="submitBtn"
+                                    class="btn btn-sm btn-primary" disabled>
                             </div>
                         </div>
                 </form>
@@ -107,6 +116,8 @@
         </div>
     </div>
     </div>
+    <!-- aviso de privacidad -->
+     <?php include 'modulo/AvisoPriv.php'; ?>
     <!-- Footer  - Bootstrap menu -->
     <?php include 'modulo/footer.php'; ?>
     <script src="js/bootstrap.min.js"></script>
@@ -130,9 +141,22 @@
                     }, false)
                 })
         })()
-    </script>
-    <script>
-    function verPass(ck) {
+        // termina la funcion de validacion 
+        // activar el boton e registrar en formulario registro de usuarios
+                document.getElementById('aceptarTerminos').addEventListener('click', function() {
+        // Obtener el estado del checkbox
+                let checkbox = document.getElementById('aceptarTerminos');
+        // Obtener el botón de submit
+                let submitBtn = document.getElementById('submitBtn');
+        // Habilitar el botón de submit si el checkbox está marcado
+                if (checkbox.checked) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+        });
+        // funcion para ver el password dentro del registro 
+        function verPass(ck) {
         if (ck.checked)
         $('#VerPassWord').attr("type", "text");
         else

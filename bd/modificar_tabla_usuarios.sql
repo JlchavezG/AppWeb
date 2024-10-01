@@ -1,0 +1,1 @@
+ALTER TABLE AppWeb.Usuarios ADD ImgUser VARCHAR(255) NOT NULL AFTER FechReg;

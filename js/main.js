@@ -42,3 +42,4 @@ window.addEventListener('online', () => {
 });
 // Verifica la conexión al cargar la página
 window.onload = checkInternetConnection;
+

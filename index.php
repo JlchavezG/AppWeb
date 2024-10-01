@@ -1,3 +1,7 @@
+<?php 
+    include 'include/conection.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +17,7 @@
 <body>
     <div class="container">
         <div class="row mt-5 justify-content-center">
-            <h1 class="text-center display-5 fs-4 text">Inicio de <span class="text-primary">sesion</span></h1>
+            <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion MindCare</span></h1>
         </div>
         <div class="row justify-content-center mt-3">
             <div class="row mt-2 justify-content-center">
