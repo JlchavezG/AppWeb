@@ -22,35 +22,26 @@
                 <p style="text-align: justify;">Datos relacionados con tu historial psicológico y de salud, necesarios para brindarte un tratamiento adecuado. En caso de que
                 sea necesario, también podríamos solicitar información adicional, que será utilizada exclusivamente para los fines indicados en este aviso de privacidad.</p>
                 <p style="text-align: justify;">3. Finalidades del Tratamiento de Datos: Los datos personales que recabamos serán utilizados para las siguientes finalidades:
-                Registrarte como usuario en la plataforma MindCare.</p>
-Proporcionar los servicios de diagnóstico, tratamiento y canalización psicológica.
-Crear un historial clínico que permita dar seguimiento a tu progreso y brindar una atención personalizada.
-Comunicarnos contigo en caso de ser necesario para recordatorios de citas o seguimiento de tratamiento.
-Cumplir con obligaciones legales y normativas aplicables.
-4. Uso de Datos Sensibles
-MindCare está comprometido con la protección de tus datos sensibles. Los datos relacionados con tu historial psicológico serán tratados con la máxima confidencialidad y únicamente por los profesionales autorizados.
-
-5. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)
-Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales en cualquier momento. Para ejercer estos derechos, puedes ponerte en contacto con nosotros a través del correo [correo de contacto] o en [medio de contacto].
-
-6. Transferencia de Datos
-Tus datos personales no serán compartidos con terceros, salvo en los casos estrictamente necesarios, como el cumplimiento de normativas legales o en situaciones de urgencia médica. En esos casos, MindCare se asegurará de cumplir con las disposiciones legales pertinentes para la protección de tus datos.
-
-7. Medidas de Seguridad
-Para garantizar la protección de tus datos, implementamos medidas de seguridad administrativas, técnicas y físicas para evitar su pérdida, mal uso o acceso no autorizado.
-
-8. Cambios en el Aviso de Privacidad
-Nos reservamos el derecho de actualizar este aviso de privacidad en cualquier momento. Cualquier cambio será notificado a través de nuestra plataforma, por lo que te recomendamos revisarlo periódicamente.
-
-9. Consentimiento
-Al registrarte en MindCare y proporcionar tus datos personales, aceptas que sean tratados de acuerdo con lo establecido en este aviso de privacidad.
-
-Fecha de última actualización: [Fecha de la última modificación]
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+                Registrarte como usuario en la plataforma MindCare.Proporcionar los servicios de diagnóstico, tratamiento y canalización psicológica.
+                Crear un historial clínico que permita dar seguimiento a tu progreso y brindar una atención personalizada.</p>
+                <p style="text-align: justify;">Comunicarnos contigo en caso de ser necesario para recordatorios de citas o seguimiento de tratamiento. Cumplir con obligaciones 
+                legales y normativas aplicables.</p>
+                <p style="text-align: justify;">4. Uso de Datos Sensibles MindCare está comprometido con la protección de tus datos sensibles. Los datos relacionados con tu historial 
+                psicológico serán tratados con la máxima confidencialidad y únicamente por los profesionales autorizados.</p>
+                <p style="text-align: justify;">5. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento 
+                de tus datos personales en cualquier momento. Para ejercer estos derechos, puedes ponerte en contacto con nosotros a través del correo [correo de contacto] o en [medio de contacto].</p>
+                <p style="text-align: justify;">6. Transferencia de Datos Tus datos personales no serán compartidos con terceros, salvo en los casos estrictamente necesarios, como el cumplimiento de normativas 
+                legales o en situaciones de urgencia médica. En esos casos, MindCare se asegurará de cumplir con las disposiciones legales pertinentes para la protección de tus datos.</p>
+                <p style="text-align: justify;">7. Medidas de Seguridad Para garantizar la protección de tus datos, implementamos medidas de seguridad administrativas, técnicas y físicas para evitar su pérdida, 
+                mal uso o acceso no autorizado.</p>
+                <p style="text-align: justify;">8. Cambios en el Aviso de Privacidad Nos reservamos el derecho de actualizar este aviso de privacidad en cualquier momento. Cualquier cambio será notificado a través 
+                de nuestra plataforma, por lo que te recomendamos revisarlo periódicamente.</p>
+                <p style="text-align: justify;">9. Consentimiento Al registrarte en MindCare y proporcionar tus datos personales, aceptas que sean tratados de acuerdo con lo establecido en este aviso de privacidad.</p>
+                <p style="text-align: justify;">Fecha de última actualización: [Fecha de la última modificación]</p>
+            </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
     </div>
-  </div>
+    </div>
+</div>
 </div>
