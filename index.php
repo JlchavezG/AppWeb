@@ -73,10 +73,10 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6 text-center mt-2">
                                 <div class="d-grid gap-2 mx-auto">
-                                    <button type="button" class="btn btn-outline-primary">
+                                    <a href="RecPass.php" type="button" class="btn btn-outline-primary">
                                         <svg class="bi" width="18" height="18" fill="currentColor">
                                             <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
-                                        </svg>&nbsp;&nbsp; Recupera tu cuenta</button>
+                                        </svg>&nbsp;&nbsp; Recupera tu cuenta</a>
                                 </div>
                             </div>
                         </div>

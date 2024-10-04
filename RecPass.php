@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace.css">
     <script src="js/jquery.js"></script>
-    <title>Registro de Usuario | Iscjoseluischavezg</title>
+    <title>Recuperar Password | Iscjoseluischavezg</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
                 <div id="alert-container"></div>
                 <div class="row mt-3">
-                    <h1 class="display-6 fs-5 text-center">Registro de <span class="text-primary">usuario MindCare</span></h1>
+                    <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">usuario MindCare</span></h1>
                 </div>
             </div>
         </div>
@@ -50,24 +50,9 @@
                                 <img src="img/registro.png" alt="registro" style="width: 400px;" class="mx-auto">
                             </div>
                             <div class="row mt-2">
-                                <input type="text" name="Nombre" id="nombre" class="form-control" placeholder="Nombre"
+                                <input type="text" name="NombreUserPass" id="nombreUP" class="form-control" placeholder="Nombre de Usurio"
                                     required>
-                                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
-                            </div>
-                            <div class="row mt-2">
-                                <input type="text" name="Apaterno" id="apaterno" class="form-control"
-                                    placeholder="Apellido Paterno" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu Apallido paterno.</div>
-                            </div>
-                            <div class="row mt-2">
-                                <input type="text" name="Amaterno" id="amaterno" class="form-control"
-                                    placeholder="Apellido Materno" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu Apellido materno.</div>
-                            </div>
-                            <div class="row mt-2">
-                                <input type="tel" name="TelefonoUser" id="telefonouser" class="form-control"
-                                    placeholder="Telefono" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu Telefono.</div>
+                                    <div class="invalid-feedback">Por favor ingresa tu  de Usuario.</div>
                             </div>
                             <div class="row mt-2">
                                 <input type="email" name="EmailUser" id="emailuser" class="form-control"
@@ -75,41 +60,11 @@
                                     <div class="invalid-feedback">Por favor ingresa tu Email.</div>
                             </div>
                             <div class="row mt-2">
-                                <select class="form-select  mb-1" name="Tusuario" required>
-                                    <option selected>Como deseas registrate en nuestra plataforma</option>
-                                    <?php while($TiposU = $ETusuariosC->fetch_assoc()){ ?>
-                                    <option value="<?php echo $TiposU['Id_Tusuario']; ?>"><?php echo $TiposU['NomTuser']; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="row mt-2">
-                                <input type="UserNick" name="userNick" id="usernick" class="form-control"
-                                    placeholder="Nombre de Usuario" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu Nombre de usuario.</div>
-                            </div>
-                            <div class="row mt-2">
-                                <input type="password" name="passUser" id="VerPassWord" class="form-control"
-                                    placeholder="Password" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu password.</div>
-                            </div>
-                            <div class="row mt-2">
-                            <div class="col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-check form-switch">
-                                    <input type="checkbox" id="aceptarTerminos" class="form-check-input" onclick="">
-                                    <label for="VerPass" class="form-check-label"><a href="#" data-bs-toggle="modal" data-bs-target="#AvisoPrivacidad" class="text-decoration-none">Acepta Aviso de Privacidad</a></label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-check form-switch">
-                                    <input type="checkbox" id="VerPass" class="form-check-input" onclick="verPass(this);">
-                                    <label for="VerPass" class="form-check-label">Visualizar Password</label>
-                                </div>
+                                <input type="submit" value="RecuperarPass" name="btnRecPass" id="submitBtn"
+                                    class="btn btn-sm btn-primary">
                             </div>
                         </div>
-                            <div class="row mt-2">
-                                <input type="submit" value="Registrar" name="btnRegistrar" id="submitBtn"
-                                    class="btn btn-sm btn-primary" disabled>
-                            </div>
+                            
                         </div>
                 </form>
             </div>
