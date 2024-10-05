@@ -47,7 +47,7 @@
                     <div class="row mt-2 justify-content-center">
                         <div class="col-sm-12 col-md-8 col-lg-8">
                             <div class="row mt-2">
-                                <img src="img/registro.png" alt="registro" style="width: 400px;" class="mx-auto">
+                                <img src="img/RecPass.png" alt="registro" style="width: 400px;" class="mx-auto">
                             </div>
                             <div class="row mt-2">
                                 <input type="text" name="NombreUserPass" id="nombreUP" class="form-control" placeholder="Nombre de Usurio"

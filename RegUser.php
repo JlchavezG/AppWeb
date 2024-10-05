@@ -117,7 +117,7 @@
     </div>
     </div>
     <!-- aviso de privacidad -->
-     <?php include 'modulo/AvisoPriv.php'; ?>
+    <?php include 'modulo/AvisoPriv.php'; ?>
     <!-- Footer  - Bootstrap menu -->
     <?php include 'modulo/footer.php'; ?>
     <script src="js/bootstrap.min.js"></script>
