@@ -1,37 +1,30 @@
   /* Estilos personalizados para hacer el navbar elegante */
-  .navbar {
-      background-color: #6C63FF;
-      /* Color elegante en tonos lavanda */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      /* Sombra ligera */
-  }
+.navbar {
+    background-color: #221e77;
+    /* Color elegante en tonos lavanda */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+}
+.nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
 
-  .navbar-brand {
-      font-family: 'Arial', sans-serif;
-      font-size: 1.5rem;
-      color: white;
-      font-weight: bold;
-  }
+.nav-link:hover {
+    color: #FFBF00;
+    /* Color dorado en hover */
+}
 
-  .nav-link {
-      color: white;
-      transition: color 0.3s ease;
-  }
+.btn-primary {
+    background-color: #34b6da;
+    /* Botón de llamada a la acción con color dorado */
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-  .nav-link:hover {
-      color: #FFBF00;
-      /* Color dorado en hover */
-  }
-
-  .btn-primary {
-      background-color: #FFBF00;
-      /* Botón de llamada a la acción con color dorado */
-      border: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-  }
-
-  .btn-primary:hover {
-      background-color: #FFD700;
-      /* Botón más claro al hacer hover */
-  }
+.btn-primary:hover {
+    background-color: transparent;
+    border: 2px solid #34b6da;
+    /* Botón más claro al hacer hover */
+ }

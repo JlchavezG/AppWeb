@@ -19,12 +19,12 @@
         <div class="row mt-4">
             <div class="col"></div>
             <div class="col text-end">
-                <a href="index.php" type="button" class="btn btn-outline-primary mb-1">
+                <a href="index" type="button" class="btn btn-outline-primary mb-1">
                     <svg class="bi" width="18" height="18" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
                     </svg>&nbsp;&nbsp; Inicio de Sesion
                 </a>
-                <a href="index.html" type="button" class="btn btn-outline-primary mb-1">
+                <a href="#" type="button" class="btn btn-outline-primary mb-1">
                     <svg class="bi" width="18" height="18" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#question-lg" />
                     </svg>&nbsp;&nbsp; Boton de Ayuda

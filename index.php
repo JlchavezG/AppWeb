@@ -1,6 +1,6 @@
 <?php 
     include 'include/conection.php';
-
+    include 'include/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +29,16 @@
                 <img src="img/login.png" alt="login" class="img-fluid">
             </div>
         </div>
+        <div class="row mt-2 justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <?php echo $alerta;?>
+            </div> 
+        </div>
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center"></div>
             <div class="row mt-3 justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-5">
-                    <form action="" method="post" class="needs-validation" novalidate>
+                    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" class="needs-validation" novalidate>
                         <div class="row mt-2">
                             <input type="text" name="UserName" id="UserName" class="form-control" placeholder="Usuario"
                                 required>
@@ -64,7 +69,7 @@
                         <div class="row mt-3 justify-content-center">
                             <div class="col-sm-12 col-md-6 col-lg-6 text-center mt-2">
                                 <div class="d-grid gap-2 mx-auto">
-                                    <a href="RegUser.php" type="button" class="btn btn-outline-primary">
+                                    <a href="RegUser" type="button" class="btn btn-outline-primary">
                                         <svg class="bi" width="18" height="18" fill="currentColor">
                                             <use xlink:href="library/bicons/bootstrap-icons.svg#plus-circle" />
                                         </svg>&nbsp;&nbsp; Crea una cuenta
@@ -73,7 +78,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6 text-center mt-2">
                                 <div class="d-grid gap-2 mx-auto">
-                                    <a href="RecPass.php" type="button" class="btn btn-outline-primary">
+                                    <a href="RecPass" type="button" class="btn btn-outline-primary">
                                         <svg class="bi" width="18" height="18" fill="currentColor">
                                             <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
                                         </svg>&nbsp;&nbsp; Recupera tu cuenta</a>
