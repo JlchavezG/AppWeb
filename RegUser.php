@@ -1,5 +1,6 @@
 <?php 
     include 'include/querys.php';
+    include 'include/action.php';
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +44,7 @@
         </div>
         <div class="row justify-content-center mt-2">
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3 text-center">
-                <form action="" method="post" class="needs-validation" novalidate>
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" class="needs-validation" novalidate>
                     <div class="row mt-2 justify-content-center">
                         <div class="col-sm-12 col-md-8 col-lg-8">
                             <div class="row mt-2">
@@ -121,7 +122,6 @@
     <!-- Footer  - Bootstrap menu -->
     <?php include 'modulo/footer.php'; ?>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/pace.js"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields

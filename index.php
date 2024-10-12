@@ -20,17 +20,12 @@
             <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion MindCare</span></h1>
         </div>
         <div class="row justify-content-center mt-3">
-            <div class="row mt-2 justify-content-center">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div id="alert-container"></div>
-                </div>
-            </div>
             <div class="col-sm-12 col-md-10 col-lg-10 text-center">
                 <img src="img/login.png" alt="login" class="img-fluid">
             </div>
         </div>
         <div class="row mt-2 justify-content-center">
-            <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="col-sm-12 col-md- col-lg-6">
                 <?php echo $alerta;?>
             </div> 
         </div>
@@ -93,7 +88,6 @@
     <!-- Footer  - Bootstrap menu -->
     <?php include 'modulo/footer.php'; ?>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/pace.js"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields

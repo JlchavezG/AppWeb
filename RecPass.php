@@ -35,7 +35,6 @@
     <div class="container">
         <div class="row justify-content-center mt-2">
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
-                <div id="alert-container"></div>
                 <div class="row mt-3">
                     <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">usuario MindCare</span></h1>
                 </div>
@@ -76,7 +75,6 @@
     <!-- Footer  - Bootstrap menu -->
     <?php include 'modulo/footer.php'; ?>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/pace.js"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
