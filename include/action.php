@@ -27,6 +27,19 @@
                 $imgUser = "AvatarN.png";
                 break;
         }
+        // consulta para extraer los datos de la tabla de usuarios
+        $VeriUser = "SELECT * FROM Usuarios WHERE UserNick = '$UserNick'";
+        $EVeriUser = $Conection->query($VeriUser);
+        // validar que no exista el unser nick en la base de datos 
+        if($EVeriUser > 0){
+            $AlertReg .="<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(13,204,207,0.8);'>
+                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
+                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
+                                </svg>
+                                <strong> El nombre de usuario ya existe</strong> Por favor verificalo o contacta a soporte.
+                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        </div>";
+        }
         
         // registrar el usuario en la base de datos 
         $RegNewUser = "INSERT INTO Usuarios(NombreUser,ApellidoP,ApellidoM,TelefonoUser,EmailUser,Tusuario,UserNick,
