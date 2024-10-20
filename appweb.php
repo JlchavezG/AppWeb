@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,24 +25,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Inicio</a>
+                        <a class="nav-link" href="#home">Bienvenido:</a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="#get-help">Obtener Ayuda</a>
+                        <a class="btn btn-primary" href="#get-help">&nbsp;Agendar Cita</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
 </body>
