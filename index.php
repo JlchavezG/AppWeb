@@ -16,6 +16,12 @@
 
 <body>
     <div class="container">
+        <div class="row mt-4 mb 2">
+            <div class="col"></div>
+            <div class="col text-end">
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin" class="btn btn-outline-primary">Ayuda Login</a>
+            </div>
+        </div>
         <div class="row mt-5 justify-content-center">
             <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion MindCare</span></h1>
         </div>
@@ -85,8 +91,10 @@
             </div>
         </div>
     </div>
+    <!-- modulo de ayuda login  -->
+    <?php include 'modulo/AyudaLogin.php'; ?>
     <!-- Footer  - Bootstrap menu -->
-    <?php include 'modulo/footer.php'; ?>
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
     <script>

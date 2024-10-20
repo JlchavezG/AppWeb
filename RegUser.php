@@ -36,7 +36,7 @@ include 'include/action.php';
                                     <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
                                 </svg>&nbsp;&nbsp; Inicio de Sesion
                             </a>
-                            <a href="index.html" type="button" class="btn btn-outline-primary mb-1">
+                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaRegistro" type="button" class="btn btn-outline-primary mb-1">
                                 <svg class="bi" width="18" height="18" fill="currentColor">
                                     <use xlink:href="library/bicons/bootstrap-icons.svg#question-lg" />
                                 </svg>&nbsp;&nbsp; Boton de Ayuda
@@ -133,6 +133,8 @@ include 'include/action.php';
         </div>
     </div>
     </div>
+    <!-- adjuntar mosulo de ayuda de registro -->
+    <?php include 'modulo/AyudaReg.php'; ?>
     <!-- aviso de privacidad -->
     <?php include 'modulo/AvisoPriv.php'; ?>
     <!-- Footer  - Bootstrap menu -->
