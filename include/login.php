@@ -18,7 +18,9 @@ if (isset($_POST['BtnIngresar'])) {
         if ($UserNick == $userok && $Password == $passwordok) {
             $_SESSION['loguin'] = TRUE;
             $_SESSION['Usuario'] = $UserNick;
+            
             header("location:appweb");
+
             
         } else {
             $alerta .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(13,204,207,0.8);'>
