@@ -1,7 +1,8 @@
 <?php
 include 'conection.php';
 error_reporting(0);
-
+// inicia registro de usuario
+// recuparar datos para el registro de usuarios
 if (isset($_POST['btnRegistrar'])) {
     $NomUser = $Conection->real_escape_string($_POST['Nombre']);
     $Apaterno = $Conection->real_escape_string($_POST['Apaterno']);
@@ -80,4 +81,36 @@ if (isset($_POST['btnRegistrar'])) {
         }
     }
 }
+//  accion de recuperar usuario y password 
+if(isset($_POST['btnRecPass'])){
+    $RecUserPass = $Conection->real_escape_string($_POST['NombreUserPass']);
+    $RecEmailPass = $Conection->real_escape_string($_POST['EmailUser']);
+    
+    // consulta para extraer datos si existe el usuario para recuperar el password
+    $BuscarUser = "SELECT * FROM Usuarios WHERE EmailUser = '$RecEmailPass' AND UserNick = '$RecUserPass'";
+    $eBuscarUser = $Conection->query($BuscarUser);
+    $ResultadoBuser = $eBuscarUser->fetch_array();
+    $IdUserB = $ResultadoBuser['Id_Usuarios'];
+    $IdUserEmailB = $ResultadoBuser['EmailUser'];
+    if($ResultadoBuser  > 0){
+        $AlertRecuperar.="<div class='alert alert-success alert-dismissible fade show shadow' role='alert' style='background-color:rgba(32, 160, 19,0.8);'>
+                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
+                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
+                                </svg>
+                                <strong class='text-white'> Exelente datos encontrados</strong> <span class='text-white'> Actualiza tu password.<a href='RecPass2?id=$IdUserB&Email=$IdUserEmailB' class='text-white text-decoration-none'>&nbsp;Click Aqui</span>
+                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        </div>"; 
+
+    } 
+    else{
+        $AlertRecuperar.="<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
+                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
+                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
+                                </svg>
+                                <strong class='text-white'> No se encontraron datos. </strong> <span class='text-white'> Verifica o contacta a soporte.</span>
+                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        </div>";
+    }
+}
+
 ?>

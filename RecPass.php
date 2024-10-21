@@ -1,6 +1,6 @@
 <?php 
     include 'include/querys.php';
-
+    include 'include/action.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@
                         <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
                     </svg>&nbsp;&nbsp; Inicio de Sesion
                 </a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin" type="button" class="btn btn-outline-primary mb-1">
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaRecPass" type="button" class="btn btn-outline-primary mb-1">
                     <svg class="bi" width="18" height="18" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#question-lg" />
                     </svg>&nbsp;&nbsp; Boton de Ayuda
@@ -36,17 +36,23 @@
         <div class="row justify-content-center mt-2">
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
                 <div class="row mt-3">
-                    <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">usuario MindCare</span></h1>
+                    <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">Usuario MindCare</span></h1>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mt-2">
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3 text-center">
-                <form action="" method="post" class="needs-validation" novalidate>
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="needs-validation" novalidate>
                     <div class="row mt-2 justify-content-center">
                         <div class="col-sm-12 col-md-8 col-lg-8">
+                            <div class="row mt-2 mb-2">
+                                <?php echo $AlertRecuperar; ?>
+                            </div>
                             <div class="row mt-2">
                                 <img src="img/RecPass.png" alt="registro" style="width: 400px;" class="mx-auto">
+                            </div>
+                            <div class="row mt1 mb-1">
+                                <p class="fs-6 fw-lighter">Ingresa tu nombre de usuraio y email con el cual te registraste en el sistema</p>
                             </div>
                             <div class="row mt-2">
                                 <input type="text" name="NombreUserPass" id="nombreUP" class="form-control" placeholder="Nombre de Usurio"
@@ -72,8 +78,10 @@
     </div>
     <!-- aviso de privacidad -->
     <?php include 'modulo/AvisoPriv.php'; ?>
+    <!-- modulo ayuda recuperar password  -->
+     <?php include 'modulo/AyudaRecPass.php';?>
     <!-- Footer  - Bootstrap menu -->
-    <?php include 'modulo/footer.php'; ?>
+   
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
     <script>
