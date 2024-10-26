@@ -79,6 +79,10 @@ include 'include/action.php';
                                 <div class="invalid-feedback">Por favor ingresa tu Email.</div>
                             </div>
                             <div class="row mt-2">
+                                <label for="FechaNacUser" class="text-start">Fecha de Nacimiento</label>
+                                <input type="date" name="FechNacUser" id="FechNacUser" class="form-control" required>
+                            </div>
+                            <div class="row mt-2">
                                 <select class="form-select  mb-1" name="UserGenero" required>
                                     <option selected>Selecciona tu genero</option>
                                     <?php while ($GeneroU = $EGenero->fetch_assoc()) { ?>
@@ -123,7 +127,7 @@ include 'include/action.php';
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-2">
+                            <div class="row mt-2 mb-5">
                                 <input type="submit" value="Registrar" name="btnRegistrar" id="submitBtn"
                                     class="btn btn-sm btn-primary" disabled>
                             </div>
@@ -138,7 +142,7 @@ include 'include/action.php';
     <!-- aviso de privacidad -->
     <?php include 'modulo/AvisoPriv.php'; ?>
     <!-- Footer  - Bootstrap menu -->
-    <?php include 'modulo/footer.php'; ?>
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
     <script>

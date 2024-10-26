@@ -13,6 +13,12 @@ if (isset($_POST['btnRegistrar'])) {
     $UserNick = $Conection->real_escape_string($_POST['userNick']);
     $PassUser = $Conection->real_escape_string(md5($_POST['passUser']));
     $FechaReg = date('Y-m-d');
+    $FechNacUser = $Conection->real_escape_string($_POST['FechNacUser']);
+    // Convertir la fecha de nacimiento a un objeto DateTime
+    $fecha_nacimiento_obj = new DateTime($FechNacUser);
+    $fecha_actual = new DateTime();  // Fecha actual
+    // Calcular la diferencia de años
+    $edad = $fecha_actual->diff($fecha_nacimiento_obj)->y;
     $Genero = $Conection->real_escape_string($_POST['UserGenero']);
     $StatusUser = 1;
     $Online = 0;
@@ -56,7 +62,17 @@ if (isset($_POST['btnRegistrar'])) {
                                 <strong class='text-white'> El correo electrónico ya está registrado </strong> <span class='text-white'>Por favor verificalo o contacta a soporte.</span>
                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>";
-    } else {
+    } 
+    elseif($edad < 18){
+        $AlertReg .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
+                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
+                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
+                                </svg>
+                                <strong class='text-white'> Lo sentimos, no puedes registrarte </strong> <span class='text-white'>Porque eres menor de edad.</span>
+                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        </div>";
+    }
+    else {
         // Registrar el usuario en la base de datos
         $RegNewUser = "INSERT INTO Usuarios(NombreUser, ApellidoP, ApellidoM, TelefonoUser, EmailUser, Tusuario, UserNick, PasswordUser, FechReg, Id_Genero, ImgUser, EstatusUser, OnlineEstatus)
                         VALUES ('$NomUser', '$Apaterno', '$Amaterno', '$TelefonoUser', '$EmailUser', '$TipoUser', '$UserNick', '$PassUser', '$FechaReg', '$Genero', '$imgUser', '$StatusUser', '$Online')";

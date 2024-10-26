@@ -13,27 +13,30 @@ if (isset($_POST['BtnIngresar'])) {
         }
         $Resultado->close();
     }
-    $Conection->close();
+    
     if (isset($UserNick) && isset($Password)) {
         if ($UserNick == $userok && $Password == $passwordok) {
             $_SESSION['loguin'] = TRUE;
             $_SESSION['Usuario'] = $UserNick;
-            
+            // consulta para modificar el estado de online 
+            $Online = "UPDATE Usuarios SET OnlineEstatus = 1 WHERE Id_Usuarios = '$IdPersonal'";
+            $VOnline = $Conection->query($Online);
             header("location:appweb");
 
             
         } else {
-            $alerta .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(13,204,207,0.8);'>
+            $alerta .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
                                 <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
                                 <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
                                 </svg>
-                                <strong> Usuario y/o password invalido</strong> Por favor contacta a soporte.
+                                <strong class='text-white'> Usuario y/o password invalido</strong> <span class='text-white'>Por favor contacta a soporte.</span>
                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>";
         }
     } else {
         header("location:index");
     }
+    $Conection->close();
 }
 
 
