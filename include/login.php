@@ -2,9 +2,9 @@
 error_reporting(0);
 session_start();
 if (isset($_POST['BtnIngresar'])) {
-    $UserNick = $Conection->real_escape_string($_POST['UserName']);
+    $usuario = $Conection->real_escape_string($_POST['UserName']);
     $Password = $Conection->real_escape_string(md5($_POST['UserPass']));
-    $Login = "SELECT * FROM Usuarios WHERE UserNick = '$UserNick' and PasswordUser = '$Password' and EstatusUser = '1'";
+    $Login = "SELECT * FROM Usuarios WHERE UserNick = '$usuario' and PasswordUser = '$Password' and EstatusUser = '1'";
     if ($Resultado = $Conection->query($Login)) {
         while ($row = $Resultado->fetch_array()) {
             $userok = $row['UserNick'];
@@ -14,10 +14,10 @@ if (isset($_POST['BtnIngresar'])) {
         $Resultado->close();
     }
     
-    if (isset($UserNick) && isset($Password)) {
-        if ($UserNick == $userok && $Password == $passwordok) {
+    if (isset($usuario) && isset($Password)) {
+        if ($usuario == $userok && $Password == $passwordok) {
             $_SESSION['loguin'] = TRUE;
-            $_SESSION['Usuario'] = $UserNick;
+            $_SESSION['Usuario'] = $Usuario;
             // consulta para modificar el estado de online 
             $Online = "UPDATE Usuarios SET OnlineEstatus = 1 WHERE Id_Usuarios = '$IdPersonal'";
             $VOnline = $Conection->query($Online);
