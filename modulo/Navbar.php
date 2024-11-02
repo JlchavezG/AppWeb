@@ -80,7 +80,7 @@
                     </li>
                     <li class="nact-item">
                         &nbsp;
-                        <a class="nav-link" aria-current="page" href="#">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#CerrarSesionModal">
                             <svg class="bi" width="25" height="25" fill="currentColor">
                                 <use xlink:href="library/bicons/bootstrap-icons.svg#power" />
                             </svg> &nbsp; Cerrar Sesion

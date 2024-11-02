@@ -1,12 +1,12 @@
 <?php 
-// recordar la sesion 
-session_start();
 // eliminar alertas no deseadas 
 error_reporting(0);
+// recordar la sesion 
+session_start();
 // validar que el usuari pase por el login 
-$Usuario = $_SESSION['Usuario'];
-if(!isset($Usuario)){
-header("location:index");
+$usuario = $_SESSION['Usuario'];
+if(!isset($usuario)){
+  header("location:index");
 }
 // variables globales para los procesos del sistema 
 $Accion = "Ingreso a la plataforma";
@@ -26,5 +26,3 @@ if ($hora_actual >= 5 && $hora_actual < 12) {
     $saludo = 'Buenas noches';
 }
 // consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
-
-?>

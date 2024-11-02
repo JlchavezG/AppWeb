@@ -17,7 +17,7 @@ if (isset($_POST['BtnIngresar'])) {
     if (isset($usuario) && isset($Password)) {
         if ($usuario == $userok && $Password == $passwordok) {
             $_SESSION['loguin'] = TRUE;
-            $_SESSION['Usuario'] = $Usuario;
+            $_SESSION['Usuario'] = $usuario;
             // consulta para modificar el estado de online 
             $Online = "UPDATE Usuarios SET OnlineEstatus = 1 WHERE Id_Usuarios = '$IdPersonal'";
             $VOnline = $Conection->query($Online);

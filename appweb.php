@@ -19,6 +19,7 @@ include 'include/querys.php';
     <!-- navbar principal  -->
     <?php include 'modulo/Navbar.php';?>
     <!-- termina navbar -->
+     <?php include 'modulo/MCSesion.php';?>
     <!-- inicia menu -->
     <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="MenuPrincipal" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
@@ -28,7 +29,7 @@ include 'include/querys.php';
         <div class="offcanvas-body">
                     ...
         </div>
-</div>
+    </div>
     <!-- termina menu -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
