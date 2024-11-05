@@ -6,7 +6,7 @@ if(!isset($usuario)){
   header("location:index");
 }
 // consulta para exraer los datos del usuario conectado
-$consulta = "SELECT * FROM Usuarios WHERE UserNick = '$usuario'";
+$consulta = "SELECT * FROM Usuarios WHERE UserName = '$usuario'";
 $r = $Conection->query($consulta);
 $extraer = $r->fetch_array();
 if($extraer > 0){

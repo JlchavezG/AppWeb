@@ -26,3 +26,4 @@ if ($hora_actual >= 5 && $hora_actual < 12) {
     $saludo = 'Buenas noches';
 }
 // consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
+

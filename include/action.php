@@ -36,7 +36,7 @@ if (isset($_POST['btnRegistrar'])) {
     }
 
     // Verificar si el UserNick ya existe
-    $VeriUser = "SELECT * FROM Usuarios WHERE UserNick = '$UserNick'";
+    $VeriUser = "SELECT * FROM Usuarios WHERE UserName = '$UserNick'";
     $EVeriUser = $Conection->query($VeriUser);
 
     // Verificar si el EmailUser ya existe
@@ -74,7 +74,7 @@ if (isset($_POST['btnRegistrar'])) {
     }
     else {
         // Registrar el usuario en la base de datos
-        $RegNewUser = "INSERT INTO Usuarios(NombreUser, ApellidoP, ApellidoM, TelefonoUser, EmailUser, Tusuario, UserNick, PasswordUser, FechReg, Id_Genero, ImgUser, EstatusUser, OnlineEstatus)
+        $RegNewUser = "INSERT INTO Usuarios(NombreUser, ApellidoP, ApellidoM, TelefonoUser, EmailUser, Tusuario, UserName, PasswordUser, FechReg, Id_Genero, ImgUser, EstatusUser, OnlineEstatus)
                         VALUES ('$NomUser', '$Apaterno', '$Amaterno', '$TelefonoUser', '$EmailUser', '$TipoUser', '$UserNick', '$PassUser', '$FechaReg', '$Genero', '$imgUser', '$StatusUser', '$Online')";
 
         if ($Conection->query($RegNewUser) === TRUE) {
@@ -103,7 +103,7 @@ if(isset($_POST['btnRecPass'])){
     $RecEmailPass = $Conection->real_escape_string($_POST['EmailUser']);
     
     // consulta para extraer datos si existe el usuario para recuperar el password
-    $BuscarUser = "SELECT * FROM Usuarios WHERE EmailUser = '$RecEmailPass' AND UserNick = '$RecUserPass'";
+    $BuscarUser = "SELECT * FROM Usuarios WHERE EmailUser = '$RecEmailPass' AND UserName = '$RecUserPass'";
     $eBuscarUser = $Conection->query($BuscarUser);
     $ResultadoBuser = $eBuscarUser->fetch_array();
     $IdUserB = $ResultadoBuser['Id_Usuarios'];

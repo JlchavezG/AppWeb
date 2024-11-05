@@ -4,10 +4,10 @@ session_start();
 if (isset($_POST['BtnIngresar'])) {
     $usuario = $Conection->real_escape_string($_POST['UserName']);
     $Password = $Conection->real_escape_string(md5($_POST['UserPass']));
-    $Login = "SELECT * FROM Usuarios WHERE UserNick = '$usuario' and PasswordUser = '$Password' and EstatusUser = '1'";
+    $Login = "SELECT * FROM Usuarios WHERE UserName = '$usuario' and PasswordUser = '$Password' and EstatusUser = '1'";
     if ($Resultado = $Conection->query($Login)) {
         while ($row = $Resultado->fetch_array()) {
-            $userok = $row['UserNick'];
+            $userok = $row['UserName'];
             $passwordok = $row['PasswordUser'];
             $IdPersonal = $row['Id_Usuarios'];
         }
