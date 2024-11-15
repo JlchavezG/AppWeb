@@ -2,6 +2,7 @@
 session_start();
 include 'include/confing.php';
 include 'include/querys.php';
+include 'include/conection.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

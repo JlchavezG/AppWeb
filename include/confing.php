@@ -8,6 +8,9 @@ $usuario = $_SESSION['Usuario'];
 if(!isset($usuario)){
   header("location:index");
 }
+// consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
+$Dato = "SELECT * FROM Usuarios WHERE UserName = $usuario";
+$T =  $Conection->query($Dato);
 // variables globales para los procesos del sistema 
 $Accion = "Ingreso a la plataforma";
 $Accion2 = "Salida de la plataforma";
@@ -25,5 +28,5 @@ if ($hora_actual >= 5 && $hora_actual < 12) {
 } else {
     $saludo = 'Buenas noches';
 }
-// consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
+
 

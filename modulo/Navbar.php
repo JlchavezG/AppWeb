@@ -59,7 +59,7 @@
                         <a class="nav-link" aria-current="page" href="#">
                             <svg class="bi" width="20" height="20" fill="currentColor">
                                 <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
-                            </svg> &nbsp; Usuario
+                            </svg> &nbsp; <?php echo $usuario; ?>
                         </a>
                     </li>
                     <li class="nact-item">

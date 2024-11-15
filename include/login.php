@@ -1,6 +1,7 @@
 <?php 
 error_reporting(0);
 session_start();
+include 'conection.php';
 if (isset($_POST['BtnIngresar'])) {
     $usuario = $Conection->real_escape_string($_POST['UserName']);
     $Password = $Conection->real_escape_string(md5($_POST['UserPass']));
@@ -11,9 +12,9 @@ if (isset($_POST['BtnIngresar'])) {
             $passwordok = $row['PasswordUser'];
             $IdPersonal = $row['Id_Usuarios'];
         }
-        $Resultado->close();
+       
     }
-    
+   
     if (isset($usuario) && isset($Password)) {
         if ($usuario == $userok && $Password == $passwordok) {
             $_SESSION['loguin'] = TRUE;
@@ -36,6 +37,7 @@ if (isset($_POST['BtnIngresar'])) {
     } else {
         header("location:index");
     }
+    $Resultado->close();
     $Conection->close();
 }
 

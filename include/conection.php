@@ -5,7 +5,7 @@ $NameUser = "root";
 $PassServer = "";
 $Bd = "AppWeb";
 // Intento de conexión
-$Conection = new mysqli($NameServer, $NameUser, $PassServer, $Bd);
+$Conection = mysqli_connect($NameServer, $NameUser, $PassServer, $Bd);
 // Verificación de errores en la conexión
 if ($Conection->connect_error) {
     // Manejo de error usando una excepción
