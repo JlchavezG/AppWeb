@@ -29,8 +29,8 @@
                         <a class="nav-link" href="#">
                             &nbsp;
                             <svg class="bi" width="20" height="20" fill="currentColor">
-                                <use xlink:href="library/bicons/bootstrap-icons.svg#universal-access" />
-                            </svg> &nbsp; Especialistas
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#search" />
+                            </svg> &nbsp; Buscar
                         </a>
                     </li>
                     <li class="nav-item">
@@ -45,40 +45,68 @@
                         <a class="nav-link" href="#">
                             &nbsp;
                             <svg class="bi" width="20" height="20" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#headset" />
+                            </svg> &nbsp; Soporte
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        &nbsp;
+                            <svg class="bi" width="20" height="20" fill="currentColor">
                                 <use xlink:href="library/bicons/bootstrap-icons.svg#toggles2" />
                             </svg> &nbsp; Configuracion
                         </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                            &nbsp;
+                            <svg class="bi" width="15" height="15" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#moon-stars-fill" />
+                            </svg> | <svg class="bi" width="18" height="18" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#brightness-high-fill" />
+                            </svg>  &nbsp; Modo Oscuro
+                            </a>
+                        </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    &nbsp;
+                                    <svg class="bi" width="15" height="15" fill="currentColor">
+                                        <use xlink:href="library/bicons/bootstrap-icons.svg#shield-fill-check" />
+                                    </svg> &nbsp; Seguridad
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    &nbsp;
+                                    <svg class="bi" width="20" height="20" fill="currentColor">
+                                        <use xlink:href="library/bicons/bootstrap-icons.svg#universal-access" />
+                                    </svg> &nbsp; Perfil
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="navbar-text  navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                     </li>
-                    <li class="nact-item">
+                    <li class="nav-item">
                         &nbsp;
                         <a class="nav-link" aria-current="page" href="#">
                             <svg class="bi" width="20" height="20" fill="currentColor">
                                 <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
-                            </svg> &nbsp; <?php echo $usuario; ?>
+                            </svg> &nbsp; Nombre Usuario 
                         </a>
                     </li>
-                    <li class="nact-item">
+                    <li class="nav-item">
                         &nbsp;
                         <a class="nav-link" aria-current="page" href="#">
                             <svg class="bi" width="20" height="20" fill="currentColor">
-                                <use xlink:href="library/bicons/bootstrap-icons.svg#universal-access" />
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#bell-fill" />
                             </svg>
                         </a>
                     </li>
-                    <li class="nact-item">
-                        &nbsp;
-                        <a class="nav-link" aria-current="page" href="#">
-                            <svg class="bi" width="20" height="20" fill="currentColor">
-                                <use xlink:href="library/bicons/bootstrap-icons.svg#universal-access" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nact-item">
+                    <li class="nav-item">
                         &nbsp;
                         <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#CerrarSesionModal">
                             <svg class="bi" width="25" height="25" fill="currentColor">

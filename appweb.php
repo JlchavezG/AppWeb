@@ -1,8 +1,5 @@
 <?php
-session_start();
-include 'include/confing.php';
-include 'include/querys.php';
-include 'include/conection.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +22,7 @@ include 'include/conection.php';
     <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="MenuPrincipal"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <h5 class="fs-6 fw-lighter">Menu Sistemas</h5>
             <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
         </div>
@@ -41,7 +38,7 @@ include 'include/conection.php';
                 <li class="list-group-item bg-primary text-white">
                     <a href="#" class="text-white text-decoration-none">
                         <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#house-fill" />
+                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-square" />
                         </svg>&nbsp;&nbsp; Perfil
                     </a>
                 </li>
@@ -111,14 +108,43 @@ include 'include/conection.php';
                 <li class="list-group-item bg-primary text-white">
                     <a href="#" class="text-white text-decoration-none">
                         <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#database-down" />
-                        </svg>&nbsp;&nbsp; Respaldos
+                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
+                        </svg>&nbsp;&nbsp; Nombre de Usuario
+                    </a>
+                </li>
+                <li class="list-group-item bg-primary text-white">
+                    <a href="#" class="text-white text-decoration-none">
+                        <svg class="bi" width="20" height="20" fill="currentColor">
+                            <use xlink:href="library/bicons/bootstrap-icons.svg#power" />
+                        </svg>&nbsp;&nbsp; Cerrar Sesión
                     </a>
                 </li>
             </ul>
         </div>
     </div>
     <!-- termina menu -->
+    <!-- inicia escritorio -->
+     <div class="container">
+        <div class="row mt-5 mb-2 justify-content-center">
+            <div class="card shadow bg-primary text-white">
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="container">
+                            <div class="row mt-1 mb-1">
+                                <span class="fs-6 fw-lighter">Nombre de usuario</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="row mt-1 mb-1">
+                            <span class="fs-6 fw-lighter">Tipo de usuario:</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- T  ermina escritorio-->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
     <script src="js/main.js"></script>
