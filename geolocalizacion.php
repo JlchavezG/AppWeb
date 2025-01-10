@@ -20,7 +20,8 @@
     <div id="mapa"></div>
     <script src="js/geolocaliza.js"></script>
     <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJDyvGRVvQjPZWQi0nkExVnjpupdD0-so&loading=async&libraries=map,marker">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJDyvGRVvQjPZWQi0nkExVnjpupdD0-so&callback=initMap">
+    </script>
 </body>
 
 </html>

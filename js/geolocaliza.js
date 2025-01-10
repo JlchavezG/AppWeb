@@ -7,11 +7,9 @@ async function initMap(){
     map = new Map(document.getElementById("mapa"),{
         zoom: 4,
         center: position,
-        mapId: DEMOMAP,
     });
 }
-
-
+window.initMap = initMap;
 
 function obtenerUbicacion(){
     navigator.geolocation.getCurrentPosition(function(position){

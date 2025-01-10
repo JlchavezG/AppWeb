@@ -19,131 +19,91 @@
     <!-- termina navbar -->
     <?php include 'modulo/MCSesion.php'; ?>
     <!-- inicia menu -->
-    <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="MenuPrincipal"
-        aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="fs-6 fw-lighter">Menu Sistemas</h5>
-            <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-group list-group-flush text-white">
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#house-fill" />
-                        </svg>&nbsp;&nbsp; Inicio
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-square" />
-                        </svg>&nbsp;&nbsp; Perfil
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
-                        </svg>&nbsp;&nbsp; Usuarios
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#clipboard2-data-fill" />
-                        </svg>&nbsp;&nbsp; Reportes
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#chat-left-dots-fill" />
-                        </svg>&nbsp;&nbsp; Mensajes
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#calendar-check-fill" />
-                        </svg>&nbsp;&nbsp; Agendar Citas
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-lines-fill" />
-                        </svg>&nbsp;&nbsp; Test
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#bell-fill" />
-                        </svg>&nbsp;&nbsp; Notificaciones
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#archive-fill" />
-                        </svg>&nbsp;&nbsp; Expedientes
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#clock-history" />
-                        </svg>&nbsp;&nbsp; Seguimientos
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#database-down" />
-                        </svg>&nbsp;&nbsp; Respaldos
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
-                        </svg>&nbsp;&nbsp; Nombre de Usuario
-                    </a>
-                </li>
-                <li class="list-group-item bg-primary text-white">
-                    <a href="#" class="text-white text-decoration-none">
-                        <svg class="bi" width="20" height="20" fill="currentColor">
-                            <use xlink:href="library/bicons/bootstrap-icons.svg#power" />
-                        </svg>&nbsp;&nbsp; Cerrar Sesión
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include 'modulo/MenuSistem.php';?>
     <!-- termina menu -->
     <!-- inicia escritorio -->
-     <div class="container">
+    <div class="container">
         <div class="row mt-5 mb-2 justify-content-center">
             <div class="card shadow bg-primary text-white">
+                <div class="row mt-2 mb-2">
+                    <h3 class="fs-5 text-center">Información del usuario</h3>
+                </div>
                 <div class="row mt-2 mb-2">
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="container">
                             <div class="row mt-1 mb-1">
-                                <span class="fs-6 fw-lighter">Nombre de usuario</span>
+                                <div class="col text-center">
+                                    <svg class="bi" width="20" height="20" fill="currentColor">
+                                        <use xlink:href="library/bicons/bootstrap-icons.svg#person-badge-fill" />
+                                    </svg>
+                                    &nbsp;
+                                    <span class="fs-6 fw-lighter">Nombre de usuario</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="row mt-1 mb-1">
-                            <span class="fs-6 fw-lighter">Tipo de usuario:</span>
+                            <div class="col text-center">
+                                <span class="fs-6 fw-lighter">
+                                <svg class="bi" width="20" height="20" fill="currentColor">
+                                    <use xlink:href="library/bicons/bootstrap-icons.svg#person-exclamation" />
+                                </svg>
+                                &nbsp;Tipo de usuario:</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="dropdown-divider mt-1 bg-white"></div>
+                <div class="row mt-2 text-center">
+                    <div class="col-sm-12 col-md-4 col-lg-4 mt-2 mb-2">
+                        <span class="fs-6 fw-lighter">
+                            <svg class="bi" width="20" height="20" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#telephone-fill" />
+                            </svg>
+                            &nbsp;Telefono de contacto:
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 mt-2 mb-2">
+                        <span class="fs-6 fw-lighter">
+                            <svg class="bi" width="20" height="20" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#envelope-at-fill" />
+                            </svg>
+                            &nbsp;Email de contacto:
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 mt-2 mb-2">
+                        <span class="fs-6 fw-lighter">
+                            <svg class="bi" width="20" height="20" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#calendar-check" />
+                            </svg>
+                            &nbsp;Fecha de Registro:
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-divider mt-1 bg-white"></div>
+                <div class="row mt-1 mb-2">
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-end">
+                        <a href="#" class="text-white text-decoration-none">
+                        <span class="fs-6 fw-lighter">
+                            <svg class="bi" width="18" height="18" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#pencil-fill" />
+                            </svg>
+                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-     </div>
+        <div class="row mt-3 mb-3 justify-content-center">
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 py-2 text-center">
+                <div class="card shadow-md bg-primary text-white">1</div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 py-2 text-center">2</div>
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 py-2 text-center">3</div>
+        </div>
+    </div>
+    
     <!-- T  ermina escritorio-->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
