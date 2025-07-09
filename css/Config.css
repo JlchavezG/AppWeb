@@ -1,0 +1,36 @@
+/* === main.css === */
+
+/* Botón oculto por defecto */
+#btn-ir-arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+/* Mostrar botón */
+#btn-ir-arriba.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Hover animado */
+#btn-ir-arriba:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}

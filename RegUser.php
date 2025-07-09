@@ -11,6 +11,8 @@ include 'include/action.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace2.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/Config.css">
     <script src="js/jquery.js"></script>
     <title>Registro de Usuario | Iscjoseluischavezg</title>
 </head>
@@ -36,7 +38,8 @@ include 'include/action.php';
                                     <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
                                 </svg>&nbsp;&nbsp; Inicio de Sesion
                             </a>
-                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaRegistro" type="button" class="btn btn-outline-primary mb-1">
+                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaRegistro" type="button"
+                                class="btn btn-outline-primary mb-1">
                                 <svg class="bi" width="18" height="18" fill="currentColor">
                                     <use xlink:href="library/bicons/bootstrap-icons.svg#question-lg" />
                                 </svg>&nbsp;&nbsp; Boton de Ayuda
@@ -87,7 +90,8 @@ include 'include/action.php';
                                     <option selected>Selecciona tu genero</option>
                                     <?php while ($GeneroU = $EGenero->fetch_assoc()) { ?>
                                         <option value="<?php echo $GeneroU['Id_Genero']; ?>">
-                                            <?php echo $GeneroU['NomGenero']; ?></option>
+                                            <?php echo $GeneroU['NomGenero']; ?>
+                                        </option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -96,7 +100,8 @@ include 'include/action.php';
                                     <option selected>Como deseas registrate en nuestra plataforma</option>
                                     <?php while ($TiposU = $ETusuariosC->fetch_assoc()) { ?>
                                         <option value="<?php echo $TiposU['Id_Tusuario']; ?>">
-                                            <?php echo $TiposU['NomTuser']; ?></option>
+                                            <?php echo $TiposU['NomTuser']; ?>
+                                        </option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -137,14 +142,22 @@ include 'include/action.php';
         </div>
     </div>
     </div>
+    <button id="boton-modo" aria-label="Cambiar modo" title="Cambiar modo">
+        🌙
+    </button>
+    <!-- Botón de ir arriba -->
+    <button id="btn-ir-arriba" title="Ir arriba">⬆️</button>
     <!-- adjuntar mosulo de ayuda de registro -->
     <?php include 'modulo/AyudaReg.php'; ?>
     <!-- aviso de privacidad -->
     <?php include 'modulo/AvisoPriv.php'; ?>
     <!-- Footer  - Bootstrap menu -->
-    
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
+    <script src="js/dark.js"></script>
+    <script src="js/main.js"></script>
+
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {

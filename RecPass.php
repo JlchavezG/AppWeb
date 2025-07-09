@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace2.css">
+     <link rel="stylesheet" href="css/dark.css">
     <script src="js/jquery.js"></script>
     <title>Recuperar Password | Iscjoseluischavezg</title>
 </head>
@@ -81,7 +82,12 @@
     <!-- modulo ayuda recuperar password  -->
      <?php include 'modulo/AyudaRecPass.php';?>
     <!-- Footer  - Bootstrap menu -->
-   
+   <!-- Botón flotante para modo oscuro -->
+    <button id="boton-modo" aria-label="Cambiar modo" title="Cambiar modo">
+        🌙
+    </button>
+    <!-- modulo de ayuda login  -->
+    <script src="js/dark.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
     <script>

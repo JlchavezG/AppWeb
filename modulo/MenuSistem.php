@@ -88,7 +88,7 @@
                     <a href="#" class="text-white text-decoration-none">
                         <svg class="bi" width="20" height="20" fill="currentColor">
                             <use xlink:href="library/bicons/bootstrap-icons.svg#person-circle" />
-                        </svg>&nbsp;&nbsp; Nombre de Usuario
+                        </svg>&nbsp;&nbsp; <?php echo $UserOnline['NombreUser']. " ".$UserOnline['ApellidoP'];?>
                     </a>
                 </li>
                 <li class="list-group-item bg-primary text-white">

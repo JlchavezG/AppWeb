@@ -1,28 +1,22 @@
-$(".sidebar-dropdown > a").click(function() {
-    $(".sidebar-submenu").slideUp(200);
-    if (
-      $(this)
-        .parent()
-        .hasClass("active")
-    ) {
-      $(".sidebar-dropdown").removeClass("active");
-      $(this)
-        .parent()
-        .removeClass("active");
+// === main.js ===
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnIrArriba = document.getElementById("btn-ir-arriba");
+
+  // Detectar scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnIrArriba.classList.add("visible");
     } else {
-      $(".sidebar-dropdown").removeClass("active");
-      $(this)
-        .next(".sidebar-submenu")
-        .slideDown(200);
-      $(this)
-        .parent()
-        .addClass("active");
+      btnIrArriba.classList.remove("visible");
     }
   });
-  
-  $("#close-sidebar").click(function() {
-    $(".page-wrapper").removeClass("toggled");
+
+  // Ir arriba al hacer clic
+  btnIrArriba.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
-  $("#show-sidebar").click(function() {
-    $(".page-wrapper").addClass("toggled");
-  });
+});

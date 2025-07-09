@@ -8,9 +8,14 @@ $usuario = $_SESSION['Usuario'];
 if(!isset($usuario)){
   header("location:index");
 }
+$usuario = $Conection->real_escape_string($_SESSION['Usuario']);
 // consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
-$Dato = "SELECT * FROM Usuarios WHERE UserName = $usuario";
-$T =  $Conection->query($Dato);
+$IngresaUser = "SELECT U.Id_Usuarios, U.NombreUser, U.ApellidoP, U.ApellidoM, U.TelefonoUser, U.EmailUser, U.Tusuario, U.UserName, 
+    U.FechReg, U.FechNacUser, U.Id_Genero, U.ImgUser, U.EstatusUser, U.OnlineEstatus, TU.Id_Tusuario, TU.NomTuser, G.Id_Genero, G.NomGenero  
+    FROM Usuarios U INNER JOIN TipoUsuario TU ON U.Tusuario = TU.Id_Tusuario INNER JOIN 
+    Genero G ON U.Id_Genero = G.Id_Genero WHERE U.UserName = '$usuario'";
+$EIngresaUser = $Conection->query($IngresaUser);
+$UserOnline = $EIngresaUser->fetch_array();   
 // variables globales para los procesos del sistema 
 $Accion = "Ingreso a la plataforma";
 $Accion2 = "Salida de la plataforma";

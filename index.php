@@ -1,6 +1,6 @@
-<?php 
-    include 'include/conection.php';
-    include 'include/login.php';
+<?php
+include 'include/conection.php';
+include 'include/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace2.css">
+    <link rel="stylesheet" href="css/dark.css">
     <script src="js/jquery.js"></script>
     <title>Inicio Iscjoseluischavezg</title>
 </head>
@@ -19,7 +20,8 @@
         <div class="row mt-4 mb 2">
             <div class="col"></div>
             <div class="col text-end">
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin" class="btn btn-outline-primary">Ayuda Login</a>
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin"
+                    class="btn btn-outline-primary">Ayuda Login</a>
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
@@ -32,14 +34,14 @@
         </div>
         <div class="row mt-2 justify-content-center">
             <div class="col-sm-12 col-md- col-lg-6">
-                <?php echo $alerta;?>
-            </div> 
+                <?php echo $alerta; ?>
+            </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center"></div>
             <div class="row mt-3 justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-5">
-                    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" class="needs-validation" novalidate>
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="needs-validation" novalidate>
                         <div class="row mt-2">
                             <input type="text" name="UserName" id="UserName" class="form-control" placeholder="Usuario"
                                 required>
@@ -58,7 +60,8 @@
                             <div class="col-sm-6 col-md-6 col-lg-6"></div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
                                 <div class="form-check form-switch">
-                                    <input type="checkbox" id="VerPass" class="form-check-input" onclick="verPass(this);">
+                                    <input type="checkbox" id="VerPass" class="form-check-input"
+                                        onclick="verPass(this);">
                                     <label for="VerPass" class="form-check-label">Visualizar Password</label>
                                 </div>
                             </div>
@@ -91,12 +94,17 @@
             </div>
         </div>
     </div>
+    <!-- Botón flotante para modo oscuro -->
+    <button id="boton-modo" aria-label="Cambiar modo" title="Cambiar modo">
+        🌙
+    </button>
     <!-- modulo de ayuda login  -->
     <?php include 'modulo/AyudaLogin.php'; ?>
     <!-- Footer  - Bootstrap menu -->
-    
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.js"></script>
+    <script src="js/dark.js"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
@@ -117,11 +125,11 @@
         })()
     </script>
     <script>
-    function verPass(ck) {
-        if (ck.checked)
-        $('#VerPassWord').attr("type", "text");
-        else
-        $('#VerPassWord').attr("type", "password");
+        function verPass(ck) {
+            if (ck.checked)
+                $('#VerPassWord').attr("type", "text");
+            else
+                $('#VerPassWord').attr("type", "password");
         }
     </script>
 </body>

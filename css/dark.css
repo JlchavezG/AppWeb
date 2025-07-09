@@ -1,23 +1,87 @@
-/* configuración modo oscuro */
-[data-theme="dark"] {
-    background-color: #202021 !important;
-    color: #fff;
-  }
-  [data-theme="dark"] .bg-light {
-    background-color: #333 !important;
-    color:#fff;
-  }
-  [data-theme="dark"] .bg-white  {
-    background-color: #000 !important;
-    color:#fff;
-  }
-  [data-theme="dark"] .bg-black {
-    background-color: #eee !important;
-    color:#fff;
-  }
-  [data-theme="dark"] .bg-success{
-    background-color: #220f3c !important;
-    color:#fff;
-  }
+/* === modo-oscuro.css === */
 
-   
+/* Estilos base del botón flotante */
+#boton-modo {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#boton-modo:hover {
+  background-color: #212529;
+  transform: scale(1.1);
+}
+
+/* Transición para el cuerpo */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Modo oscuro activado */
+body.modo-oscuro {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+/* === ESTILOS PARA INPUTS EN MODO OSCURO === */
+.modo-oscuro input,
+.modo-oscuro textarea,
+.modo-oscuro select {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder blanco */
+.modo-oscuro input::placeholder,
+.modo-oscuro textarea::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+
+/* Efecto de foco neón azul/blanco */
+.modo-oscuro input:focus,
+.modo-oscuro textarea:focus,
+.modo-oscuro select:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px #00ffff, 0 0 2px #ffffff;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+/* Estilos adicionales en modo oscuro */
+.modo-oscuro .card,
+.modo-oscuro .navbar,
+.modo-oscuro .modal-content,
+.modo-oscuro .table,
+.modo-oscuro .offcanvas,
+.modo-oscuro .bg-white {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border-color: #333 !important;
+}
+.modo-oscuro #btn-ir-arriba {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.modo-oscuro #btn-ir-arriba:hover {
+  background-color: #0a58ca;
+}
+/* Personaliza enlaces */
+.modo-oscuro a {
+  color: #84d0ff;
+}
