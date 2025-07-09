@@ -19,7 +19,7 @@
 }
 
 #boton-modo:hover {
-  background-color: #212529;
+  background-color: #353535;
   transform: scale(1.1);
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* Modo oscuro activado */
 body.modo-oscuro {
-  background-color: #121212 !important;
+  background-color: #2c2c2c !important;
   color: #f1f1f1 !important;
 }
 /* === ESTILOS PARA INPUTS EN MODO OSCURO === */
@@ -61,6 +61,15 @@ body.modo-oscuro {
   box-shadow: 0 0 8px #00ffff, 0 0 2px #ffffff;
   background-color: #1f1f1f;
   color: #fff;
+}
+/* === BOTÓN DE CIERRE DEL OFFCANVAS EN MODO OSCURO === */
+.modo-oscuro .btn-close {
+  filter: invert(1) brightness(2);
+  opacity: 0.9;
+}
+
+.modo-oscuro .btn-close:hover {
+  opacity: 1;
 }
 /* Estilos adicionales en modo oscuro */
 .modo-oscuro .card,

@@ -34,3 +34,93 @@
   background-color: #0056b3;
   transform: scale(1.1);
 }
+/* === ESTILOS PARA INPUTS EN MODO NORMAL (CLARO) === */
+body:not(.modo-oscuro) input,
+body:not(.modo-oscuro) textarea,
+body:not(.modo-oscuro) select {
+  background-color: #ffffff;
+  color: #212529;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder gris */
+body:not(.modo-oscuro) input::placeholder,
+body:not(.modo-oscuro) textarea::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+/* Efecto de foco azul marino suave */
+body:not(.modo-oscuro) input:focus,
+body:not(.modo-oscuro) textarea:focus,
+body:not(.modo-oscuro) select:focus {
+  outline: none;
+  border-color: #0f76dc;
+  box-shadow: 0 0 6px #0678eb, 0 0 1px #336699;
+  background-color: #f8f9fa;
+}
+
+/* Animación de entrada suave desde la izquierda */
+.offcanvas.offcanvas-start {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Cuando se muestra, aplicar la animación */
+.offcanvas.show {
+  transform: translateX(0%);
+}
+/* === ESTILOS GENERALES DE OFFCANVAS === */
+.offcanvas {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); /* sombra leve en modo claro */
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: #212529;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+  background-color: #f0f8ff;
+  color: #003366;
+}
+
+/* === MODO OSCURO === */
+body.modo-oscuro .offcanvas {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+  box-shadow: 2px 0 12px rgba(0, 255, 255, 0.1); /* sombra tenue azul en oscuro */
+}
+
+body.modo-oscuro .offcanvas-header {
+  border-bottom: 1px solid #333;
+}
+
+body.modo-oscuro .menu-link {
+  color: #f1f1f1;
+}
+
+body.modo-oscuro .menu-link:hover {
+  background-color: #2a2a2a;
+  color: #00ffff;
+  box-shadow: 0 0 6px #00ffff80;
+}
+
+/* Botón cerrar en modo oscuro */
+body.modo-oscuro .btn-close {
+  filter: invert(1) brightness(2);
+}
+

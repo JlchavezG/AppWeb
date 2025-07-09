@@ -11,6 +11,7 @@ include 'include/login.php';
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace2.css">
     <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/Config.css">
     <script src="js/jquery.js"></script>
     <title>Inicio Iscjoseluischavezg</title>
 </head>

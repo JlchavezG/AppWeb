@@ -19,6 +19,7 @@ if(!isset($usuario)){
     <link rel="stylesheet" href="css/pace.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/Config.css">
     <title>Inicio de sistema | MindCare</title>
 </head>
 
