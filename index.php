@@ -18,32 +18,32 @@ include 'include/login.php';
 
 <body>
     <div class="container">
-        <div class="row mt-4 mb 2">
+        <div class="row mt-2 mb 2">
             <div class="col"></div>
             <div class="col text-end">
                 <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin"
                     class="btn btn-outline-primary">Ayuda Login</a>
             </div>
         </div>
-        <div class="row mt-5 justify-content-center">
+        <div class="row mt-2 justify-content-center">
             <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion MindCare</span></h1>
         </div>
-        <div class="row justify-content-center mt-3">
+        <div class="row justify-content-center mt-1">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center">
-                <img src="img/login.png" alt="login" class="img-fluid">
+                <img src="img/LoginPrincipal.png" alt="login" class="img-fluid">
             </div>
         </div>
-        <div class="row mt-2 justify-content-center">
+        <div class="row mt-1 justify-content-center">
             <div class="col-sm-12 col-md- col-lg-6">
                 <?php echo $alerta; ?>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center"></div>
-            <div class="row mt-3 justify-content-center">
+            <div class="row mt-2 justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-5">
                     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="needs-validation" novalidate>
-                        <div class="row mt-2">
+                        <div class="row mt-1">
                             <input type="text" name="UserName" id="UserName" class="form-control" placeholder="Usuario"
                                 required>
                             <div class="invalid-feedback">

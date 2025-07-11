@@ -4,7 +4,7 @@
 #boton-modo {
   position: fixed;
   bottom: 100px;
-  right: 20px;
+  right: 40px;
   background-color: #343a40;
   color: white;
   border: none;
@@ -71,6 +71,9 @@ body.modo-oscuro {
 .modo-oscuro .btn-close:hover {
   opacity: 1;
 }
+.modo-oscuro .fw-bold{
+  color: #ffffff;
+}
 /* Estilos adicionales en modo oscuro */
 .modo-oscuro .card,
 .modo-oscuro .navbar,
@@ -78,9 +81,9 @@ body.modo-oscuro {
 .modo-oscuro .table,
 .modo-oscuro .offcanvas,
 .modo-oscuro .bg-white {
-  background-color: #1e1e1e !important;
+  background-color: #202020 !important;
   color: white !important;
-  border-color: #333 !important;
+  border-color: #0a3ced !important;
 }
 .modo-oscuro #btn-ir-arriba {
   background-color: #0d6efd;
