@@ -10,8 +10,8 @@
         <span class="text-center">Deceas salir del sistema: <?php echo $UserOnline['NombreUser']." ?"?></span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a href="include/cerrar.php" class="btn btn-danger">Cerrar Sesion</a>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="include/cerrar.php" class="btn btn-outline-danger">Cerrar Sesion</a>
       </div>
     </div>
   </div>

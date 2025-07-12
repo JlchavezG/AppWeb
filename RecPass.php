@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pace2.css">
-     <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="icon" href="img/New_Logo_Gris_2023.png" type="image/png">
     <script src="js/jquery.js"></script>
     <title>Recuperar Password | Iscjoseluischavezg</title>
 </head>
@@ -37,7 +38,7 @@
         <div class="row justify-content-center mt-2">
             <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
                 <div class="row mt-3">
-                    <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">Usuario MindCare</span></h1>
+                    <h1 class="display-6 fs-5 text-center">Recuperar Password <span class="text-primary">Usuario Venko</span></h1>
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
                                 <?php echo $AlertRecuperar; ?>
                             </div>
                             <div class="row mt-2">
-                                <img src="img/RecPass.png" alt="registro" style="width: 400px;" class="mx-auto">
+                                <img src="img/RecuperarLogin.png" alt="registro" style="width: 400px;" class="mx-auto">
                             </div>
                             <div class="row mt1 mb-1">
                                 <p class="fs-6 fw-lighter">Ingresa tu nombre de usuraio y email con el cual te registraste en el sistema</p>

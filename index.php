@@ -12,13 +12,14 @@ include 'include/login.php';
     <link rel="stylesheet" href="css/pace2.css">
     <link rel="stylesheet" href="css/dark.css">
     <link rel="stylesheet" href="css/Config.css">
+    <link rel="icon" href="img/New_Logo_Gris_2023.png" type="image/png">
     <script src="js/jquery.js"></script>
     <title>Inicio Iscjoseluischavezg</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row mt-2 mb 2">
+        <div class="row mt-4 mb 2">
             <div class="col"></div>
             <div class="col text-end">
                 <a href="#" data-bs-toggle="offcanvas" data-bs-target="#AyudaLogin"
@@ -27,6 +28,22 @@ include 'include/login.php';
         </div>
         <div class="row mt-2 justify-content-center">
             <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion Venko</span></h1>
+        </div>
+        <div class="row mt-1 mb-1">
+            <div class="col-6 mx-auto">
+                <?php
+            if (isset($_GET['timeout']) && $_GET['timeout'] == 1) {
+                echo "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
+                        <svg class='bi text-white' width='20' height='20' role='img' aria-label='Lock'>
+                            <use xlink:href='library/icons/bootstrap-icons.svg#lock-fill'/>
+                        </svg>
+                        <strong class='text-white'> Session Caducada</strong> <span class='text-white'>La session se cerro por tiempo de inactividad.</span>
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+                
+            }
+            ?>
+            </div>
         </div>
         <div class="row justify-content-center mt-1">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center">
@@ -76,8 +93,8 @@ include 'include/login.php';
                                 <div class="d-grid gap-2 mx-auto">
                                     <a href="RegUser" type="button" class="btn btn-outline-primary">
                                         <svg class="bi" width="18" height="18" fill="currentColor">
-                                            <use xlink:href="library/bicons/bootstrap-icons.svg#plus-circle" />
-                                        </svg>&nbsp;&nbsp; Crea una cuenta
+                                            <use xlink:href="library/bicons/bootstrap-icons.svg#headset" />
+                                        </svg>&nbsp;&nbsp; Soporte Tecnico
                                     </a>
                                 </div>
                             </div>

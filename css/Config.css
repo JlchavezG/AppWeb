@@ -123,11 +123,6 @@ body.modo-oscuro .menu-link:hover {
 body.modo-oscuro .btn-close {
   filter: invert(1) brightness(2);
 }
-
-
-
-
-
 .dashboard-card {
   border: none;
   border-radius: 1rem;
@@ -192,12 +187,10 @@ body.modo-oscuro .btn-close {
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
 }
-
-
-
-
-
-
+.linkPersonal{
+  text-decoration: none;
+  color: #003366;
+}
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);

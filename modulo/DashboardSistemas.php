@@ -25,9 +25,9 @@
                         <h6 class="text-muted">
                             <svg class="bi" width="20" height="20" fill="currentColor">
                                 <use xlink:href="library/bicons/bootstrap-icons.svg#person-add" />
-                            </svg> Usuarios
+                            </svg> Total de Usuarios
                         </h6>
-                        <h4 class="fw-bold">0</h4>
+                        <h4 class="fw-bold"><?php echo $TotalUser; ?></h4>
                     </div>
                 </div>
             </div>
@@ -38,10 +38,10 @@
                     <div class="card-body">
                         <h6 class="text-muted">
                             <svg class="bi" width="20" height="20" fill="currentColor">
-                                <use xlink:href="library/bicons/bootstrap-icons.svg#briefcase-fill"" />
-                                </svg> Clientes
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#person-fill-check" />
+                                </svg> Usuarios Online
                             </h6>
-                            <h4 class=" fw-bold">0</h4>
+                            <h4 class=" fw-bold"><?php echo $TEUserOnliine; ?></h4>
                     </div>
                 </div>
             </div>

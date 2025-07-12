@@ -43,11 +43,17 @@ if (isset($_POST['BtnIngresar'])) {
 
                 $Online = "UPDATE Usuarios SET OnlineEstatus = 1 WHERE Id_Usuarios = '$IdPersonal'";
                 $VOnline = $Conection->query($Online);
+                $registrarAcceso = "INSERT INTO HistorialAccesos (id_usuario, tipo_acceso) VALUES ('$IdPersonal', 'login')";
+                $Conection->query($registrarAcceso);
 
                 header("location:appweb");
                 exit;
             } else {
                 $_SESSION['intentos']++;
+                if (!empty($IdPersonal)) {
+                    $registrarFallido = "INSERT INTO HistorialAccesos (id_usuario, tipo_acceso) VALUES ('$IdPersonal', 'fallido')";
+                    $Conection->query($registrarFallido);
+            }
 
                 if ($_SESSION['intentos'] >= 3) {
                     // Bloquear cuenta

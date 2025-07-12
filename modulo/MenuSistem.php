@@ -7,13 +7,13 @@
     <div class="offcanvas-body">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link menu-link" href="index.html">
-                    <img src="https://i.pravatar.cc/40" alt="mdo" width="40" height="40" class="rounded-circle shadow-sm">
+                <a class="nav-link menu-link" href="perfil.php?id_user=<?php echo $UserOnline['Id_Usuarios'];?>">
+                    <img src="img/<?php echo $UserOnline['ImgUser'];?>" alt="perfil" width="40" height="40" class="rounded-circle shadow-sm">
                     &nbsp;  <?php echo $UserOnline['NombreUser']; ?>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link menu-link" href="index.html">
+                <a class="nav-link menu-link" href="appweb">
                     <svg class="bi" width="20" height="20" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#house-fill" />
                     </svg>&nbsp; Inicio

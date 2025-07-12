@@ -21,16 +21,16 @@
                             <div class="dropdown text-end">
                                 <span> Hola: <?php echo $UserOnline['NombreUser']; ?> &nbsp;</span>
                                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://i.pravatar.cc/40" alt="mdo" width="40" height="40"
+                                    <img src="img/<?php echo $UserOnline['ImgUser'];?>" alt="foto perfil" width="40" height="40"
                                         class="rounded-circle shadow-sm">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end text-small shadow"
                                     aria-labelledby="userDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="perfil.php?id_user=<?php echo $UserOnline['Id_Usuarios'];?>">
                                             <svg class="bi" width="20" height="20" fill="currentColor">
                                                 <use xlink:href="library/bicons/bootstrap-icons.svg#person-fill" />
-                                            </svg> Perfil
+                                            </svg>&nbsp; Perfil
                                         </a>
                                     </li>
                                     <li>
@@ -38,17 +38,17 @@
                                             <svg class="bi" width="20" height="20" fill="currentColor">
                                                 <use
                                                     xlink:href="library/bicons/bootstrap-icons.svg#gear-wide-connected" />
-                                            </svg> Configuración
+                                            </svg>&nbsp; Configuración
                                         </a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <a class="dropdown-item text-danger" href="#">
+                                        <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#CerrarSesionModal">
                                             <svg class="bi" width="20" height="20" fill="currentColor">
                                                 <use xlink:href="library/bicons/bootstrap-icons.svg#power" />
-                                            </svg> Cerrar sesión
+                                            </svg>&nbsp; Cerrar sesión
                                         </a>
                                     </li>
                                 </ul>
