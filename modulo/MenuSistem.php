@@ -8,6 +8,12 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link menu-link" href="index.html">
+                    <img src="https://i.pravatar.cc/40" alt="mdo" width="40" height="40" class="rounded-circle shadow-sm">
+                    &nbsp;  <?php echo $UserOnline['NombreUser']; ?>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link menu-link" href="index.html">
                     <svg class="bi" width="20" height="20" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#house-fill" />
                     </svg>&nbsp; Inicio
@@ -37,6 +43,13 @@
             <li class="nav-item">
                 <a class="nav-link menu-link" href="contacto.html">
                     <svg class="bi" width="20" height="20" fill="currentColor">
+                        <use xlink:href="library/bicons/bootstrap-icons.svg#box-seam-fill" />
+                    </svg>&nbsp; Inventario
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link menu-link" href="contacto.html">
+                    <svg class="bi" width="20" height="20" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#inboxes-fill" />
                     </svg>&nbsp; Facturas
                 </a>
@@ -51,13 +64,6 @@
             <li class="nav-item">
                 <a class="nav-link menu-link" href="contacto.html">
                     <svg class="bi" width="20" height="20" fill="currentColor">
-                        <use xlink:href="library/bicons/bootstrap-icons.svg#search" />
-                    </svg>&nbsp; Busqueda
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-link" href="contacto.html">
-                    <svg class="bi" width="20" height="20" fill="currentColor">
                         <use xlink:href="library/bicons/bootstrap-icons.svg#suitcase-lg-fill" />
                     </svg>&nbsp; Clientes
                 </a>
@@ -65,8 +71,15 @@
             <li class="nav-item">
                 <a class="nav-link menu-link" href="contacto.html">
                     <svg class="bi" width="20" height="20" fill="currentColor">
-                        <use xlink:href="library/bicons/bootstrap-icons.svg#universal-access" />
-                    </svg>&nbsp; Perfil
+                        <use xlink:href="library/bicons/bootstrap-icons.svg#lock-fill" />
+                    </svg>&nbsp; Seguridad y Auditoria
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link menu-link" href="contacto.html">
+                    <svg class="bi" width="20" height="20" fill="currentColor">
+                        <use xlink:href="library/bicons/bootstrap-icons.svg#toggles2" />
+                    </svg>&nbsp; Soporte y Mantenimiento
                 </a>
             </li>
             <li class="nav-item">

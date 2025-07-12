@@ -26,7 +26,7 @@ include 'include/login.php';
             </div>
         </div>
         <div class="row mt-2 justify-content-center">
-            <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion MindCare</span></h1>
+            <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion Venko</span></h1>
         </div>
         <div class="row justify-content-center mt-1">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center">
@@ -40,7 +40,7 @@ include 'include/login.php';
         </div>
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 text-center"></div>
-            <div class="row mt-2 justify-content-center">
+            <div class="row mt-1 justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-5">
                     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="needs-validation" novalidate>
                         <div class="row mt-1">

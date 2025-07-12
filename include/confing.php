@@ -8,6 +8,22 @@ $usuario = $_SESSION['Usuario'];
 if(!isset($usuario)){
   header("location:index");
 }
+// Tiempo de inactividad permitido (en segundos)
+$tiempo_inactividad = 300; // 5 minuto
+// Validar inactividad del usuario
+if (isset($_SESSION['ultimo_acceso'])) {
+    $tiempo_transcurrido = time() - $_SESSION['ultimo_acceso'];
+    if ($tiempo_transcurrido > $tiempo_inactividad) {
+        session_unset();     // eliminar variables de sesión
+        session_destroy();   // destruir la sesión
+        $Online = $user['Id_Usuarios'];
+        $on = "UPDATE Usuarios SET OnlineEstatus = '0' WHERE Id_Usuarios = $Online";
+        $line = $Conection->query($on);
+        header("Location: index"); // redirigir al login
+        exit();
+    }
+}
+$_SESSION['ultimo_acceso'] = time(); // actualizar último acceso
 $usuario = $Conection->real_escape_string($_SESSION['Usuario']);
 // consulta para extraer todos los datos del usuario que ingresa al sistema con inner join 
 $IngresaUser = "SELECT U.Id_Usuarios, U.NombreUser, U.ApellidoP, U.ApellidoM, U.TelefonoUser, U.EmailUser, U.Tusuario, U.UserName, 

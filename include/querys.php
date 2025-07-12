@@ -34,9 +34,6 @@
 
 
 
-    // consulta para extraer las universidades registradas en el sistema 
-    $Universidades = "SELECT * FROM  Universidades ORDER BY NomUnive ASC";
-    $EUniversidades = $Conection->query($Universidades);
     
 
     

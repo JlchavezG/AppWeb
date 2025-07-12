@@ -3,7 +3,7 @@
 $NameServer = "localhost";
 $NameUser = "root";
 $PassServer = "";
-$Bd = "AppWeb";
+$Bd = "AppVentas";
 // Intento de conexión
 $Conection = mysqli_connect($NameServer, $NameUser, $PassServer, $Bd);
 // Verificación de errores en la conexión
