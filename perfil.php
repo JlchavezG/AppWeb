@@ -117,6 +117,15 @@ if (!isset($usuario)) {
                                 </strong> <?php echo $UserOnline['FechReg']; ?>
                             </p>
                         </div>
+                        <div class="row mt-1">
+                            <span class="text-end">
+                                <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>">
+                                <svg class="bi me-1" width="20" height="20" fill="currentColor">
+                                    <use xlink:href="library/bicons/bootstrap-icons.svg#pencil-fill" />
+                                </svg>
+                                </a>
+                            </span>
+                        </div>
                     </div>
                 </div>
 

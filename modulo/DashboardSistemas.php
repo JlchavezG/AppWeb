@@ -11,7 +11,7 @@
                             <?php echo $UserOnline['NomTuser']; ?> </p>
                         <p class="text-muted mb-1"><strong>Tu email:</strong> <?php echo $UserOnline['EmailUser']; ?>
                         </p>
-                        <a href="perfil.php?id_user=<?php echo $UserOnline['Id_Usuarios'];?>" class="mt-2 btn btn-outline-primary btn-sm">Ver Perfil</a>
+                        <a href="perfil?id_user=<?php echo $UserOnline['Id_Usuarios'];?>" class="mt-2 btn btn-outline-primary btn-sm">Ver Perfil</a>
                     </div>
                     <img src="img/Desarrollador.png" alt="Congrats" class="welcome-img d-none d-md-block img-fluid"
                         width="180px">

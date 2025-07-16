@@ -27,7 +27,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end text-small shadow"
                                     aria-labelledby="userDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="perfil.php?id_user=<?php echo $UserOnline['Id_Usuarios'];?>">
+                                        <a class="dropdown-item" href="perfil?id_user=<?php echo $UserOnline['Id_Usuarios'];?>">
                                             <svg class="bi" width="20" height="20" fill="currentColor">
                                                 <use xlink:href="library/bicons/bootstrap-icons.svg#person-fill" />
                                             </svg>&nbsp; Perfil
