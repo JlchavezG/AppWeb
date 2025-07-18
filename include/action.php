@@ -2,102 +2,6 @@
 session_start();
 include 'conection.php';
 error_reporting(0);
-// inicia registro de usuario
-// recuparar datos para el registro de usuarios
-if (isset($_POST['btnRegistrar'])) {
-    $NomUser = $Conection->real_escape_string($_POST['Nombre']);
-    $Apaterno = $Conection->real_escape_string($_POST['Apaterno']);
-    $Amaterno = $Conection->real_escape_string($_POST['Amaterno']);
-    $TelefonoUser = $Conection->real_escape_string($_POST['TelefonoUser']);
-    $EmailUser = $Conection->real_escape_string($_POST['EmailUser']);
-    $TipoUser = $Conection->real_escape_string($_POST['Tusuario']);
-    $UserNick = $Conection->real_escape_string($_POST['userNick']);
-    $PassUser = $Conection->real_escape_string(md5($_POST['passUser']));
-    $FechaReg = date('Y-m-d');
-    $FechNacUser = $Conection->real_escape_string($_POST['FechNacUser']);
-    // Convertir la fecha de nacimiento a un objeto DateTime
-    $fecha_nacimiento_obj = new DateTime($FechNacUser);
-    $fecha_actual = new DateTime();  // Fecha actual
-    // Calcular la diferencia de años
-    $edad = $fecha_actual->diff($fecha_nacimiento_obj)->y;
-    $Genero = $Conection->real_escape_string($_POST['UserGenero']);
-    $StatusUser = 1;
-    $Online = 0;
-
-    switch ($Genero) {
-        case '1':
-            $imgUser = "AvatarH.png";
-            break;
-        case '2':
-            $imgUser = "AvatarM.png";
-            break;
-        default:
-            $imgUser = "AvatarN.png";
-            break;
-    }
-
-    // Verificar si el UserNick ya existe
-    $VeriUser = "SELECT * FROM Usuarios WHERE UserName = '$UserNick'";
-    $EVeriUser = $Conection->query($VeriUser);
-
-    // Verificar si el EmailUser ya existe
-    $VEmail = "SELECT * FROM Usuarios WHERE EmailUser = '$EmailUser'";
-    $EVEmailUser = $Conection->query($VEmail);
-
-    // Si el nombre de usuario ya existe
-    if ($EVeriUser->num_rows > 0) {
-        $AlertReg .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
-                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
-                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
-                                </svg>
-                                <strong class='text-white'> El nombre de usuario ya existe </strong> <span class='text-white'>Por favor verificalo o contacta a soporte.</span>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-    }
-    // Si el correo electrónico ya está registrado
-    elseif ($EVEmailUser->num_rows > 0) {
-        $AlertReg .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
-                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
-                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
-                                </svg>
-                                <strong class='text-white'> El correo electrónico ya está registrado </strong> <span class='text-white'>Por favor verificalo o contacta a soporte.</span>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-    } 
-    elseif($edad < 18){
-        $AlertReg .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
-                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
-                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
-                                </svg>
-                                <strong class='text-white'> Lo sentimos, no puedes registrarte </strong> <span class='text-white'>Porque eres menor de edad.</span>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-    }
-    else {
-        // Registrar el usuario en la base de datos
-        $RegNewUser = "INSERT INTO Usuarios(NombreUser, ApellidoP, ApellidoM, TelefonoUser, EmailUser, Tusuario, UserName, PasswordUser, FechReg, Id_Genero, ImgUser, EstatusUser, OnlineEstatus)
-                        VALUES ('$NomUser', '$Apaterno', '$Amaterno', '$TelefonoUser', '$EmailUser', '$TipoUser', '$UserNick', '$PassUser', '$FechaReg', '$Genero', '$imgUser', '$StatusUser', '$Online')";
-
-        if ($Conection->query($RegNewUser) === TRUE) {
-            $AlertReg .= "<div class='alert alert-success alert-dismissible fade show shadow' role='alert' style='background-color:rgba(32, 160, 19,0.8);'>
-                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
-                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
-                                </svg>
-                                <strong class='text-white'> El Usuario se registró exitosamente</strong> <span class='text-white'>Por favor Inicia sesión con tu cuenta.</span>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-            header("Refresh:3; url=index");
-        } else {
-            $AlertReg .= "<div class='alert alert-danger alert-dismissible fade show shadow' role='alert' style='background-color:rgba(160, 19, 90,0.8);'>
-                                <svg class='bi text-white' width='20' height='20' role='img' aria-label='Tools'>
-                                    <use xlink:href='library/icons/bootstrap-icons.svg#x-circle-fill'/>
-                                </svg>
-                                <strong class='text-white'> Error: No se pudo registrar el usuario. </strong> <span class='text-white'> Intenta más tarde.</span>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-        }
-    }
-}
 //  accion de recuperar usuario y password 
 if(isset($_POST['btnRecPass'])){
     $RecUserPass = $Conection->real_escape_string($_POST['NombreUserPass']);
@@ -139,20 +43,72 @@ if (isset($_POST['btnAupdateUser'])) {
     $TelefonoUser = $Conection->real_escape_string($_POST['TelefonoUser']);
     $EmailUser = $Conection->real_escape_string($_POST['EmailUser']);
     $FechNacUser = $Conection->real_escape_string($_POST['FechaNacr']);
+    $UserNick = $Conection->real_escape_string($_POST['NickUpdate']);
+    $EmailActual = $UserOnline['EmailUser']; // Asegúrate de ajustar esto a tu código
+    $errores = [];
+    // Validación de campos vacíos
+    $campos = [
+        'NombreUser'   => 'Nombre',
+        'ApellidoP'    => 'Apellido Paterno',
+        'ApellidoM'    => 'Apellido Materno',
+        'TelefonoUser' => 'Teléfono',
+        'EmailUser'    => 'Email',
+        'FechaNacr'    => 'Fecha de Nacimiento',
+        'NickUpdate'   => 'Nombre de Usuario (Nick)'
+    ];
 
-    // validar que la fecha de nacimiento no sea menor de edad 
+    foreach ($campos as $key => $label) {
+        if (empty(trim($_POST[$key]))) {
+            $errores[] = "El campo <strong>$label</strong> no puede estar vacío. Por favor ingréselo.";
+        }
+    }
+    // mostrar los errores si existen 
+    if (!empty($errores)) {
+        $AlertaError.= '<div class="container mt-3">';
+        foreach ($errores as $error) {
+            $AlertaError.= '
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                ' . $error . '
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>';
+        }
+        $AlertaError.= '</div>';
+    }
+    else {
+        // Aquí puedes continuar con el proceso de actualización en la base de datos
+        // validar que la fecha de nacimiento no sea menor de edad 
     if (!empty($FechNacUser)) {
         $fechaHoy = new DateTime();
         $fechaNacimiento = new DateTime($FechNacUser);
         $edad = $fechaHoy->diff($fechaNacimiento)->y;
         if ($edad < 18) {
             $AlertaError.='<div class="alert alert-danger text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(160, 19, 90,0.8);">
-                                <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> La fecha indiaca que eres menor de edad.</span>
+                                <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> La fecha indiaca que eres menor de edad, Por favor verifica tus datos.</span>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div> ';
         }
-        
+    } 
+    if($EmailUser !== $EmailActual){
+    // validar si el email selccionado ya existe en la base de datos 
+    $ValidaEmail = "SELECT EmailUser FROM Usuarios WHERE EmailUser = '$EmailUser'";
+    $ValidandoEmail = $Conection->query($ValidaEmail);
+    if ($ValidandoEmail > 0) {
+            $AlertaError.='<div class="alert alert-danger text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(160, 19, 90,0.8);">
+                                <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> El email ya se encuentra registrado en la base de datos, Por favor verifica con otro.</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> ';
+        }
     }
+
+    
+
+    }
+
+
+
+
+
+
 
 }
 

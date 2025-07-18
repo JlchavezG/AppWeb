@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow-sm navbar-custom">
+<nav class="navbar navbar-expand-lg" style="background-color: #fff;"  py-2 shadow-sm navbar-custom">
     <div class="container-fluid">
 
         <!-- Logo -->

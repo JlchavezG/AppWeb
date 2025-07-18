@@ -47,6 +47,9 @@ if(!isset($_GET['id_user'])){
         <!-- Termina navbar de busqueda -->
         <!-- contenido -->
         <div class="container">
+            <div class="row mt-3 mb-3 text-center">
+                <?php echo $AlertaError; ?>
+            </div>
             <div class="row mt-2 mb-2">
                 <div class="col-12">
                     <div class="card perfil-card shadow dashboard-card d-flex flex-wrap align-items-center p-3">
