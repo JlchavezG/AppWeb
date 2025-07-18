@@ -21,7 +21,7 @@
                             <div class="dropdown text-end">
                                 <span> Hola: <?php echo $UserOnline['NombreUser']; ?> &nbsp;</span>
                                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="img/<?php echo $UserOnline['ImgUser'];?>" alt="foto perfil" width="40" height="40"
+                                    <img src="img/user/<?php echo $UserOnline['ImgUser'];?>" alt="foto perfil" width="40" height="40"
                                         class="rounded-circle shadow-sm">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end text-small shadow"

@@ -36,7 +36,8 @@ body.modo-oscuro {
 /* === ESTILOS PARA INPUTS EN MODO OSCURO === */
 .modo-oscuro input,
 .modo-oscuro textarea,
-.modo-oscuro select {
+.modo-oscuro select,
+.modo-oscuro input-group-text {
   background-color: #2a2a2a;
   color: #ffffff;
   border: 1px solid #555;

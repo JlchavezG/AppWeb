@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conection.php';
 error_reporting(0);
 // inicia registro de usuario
@@ -127,6 +128,32 @@ if(isset($_POST['btnRecPass'])){
                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>";
     }
+}
+
+// accion para actualizar los datos del perfil de usuario que ingresa al sistema 
+if (isset($_POST['btnAupdateUser'])) {
+    $Id_UpdateUser = $Conection->real_escape_string($_POST['idUpdate']);
+    $NombreUser = $Conection->real_escape_string($_POST['NombreUser']);
+    $ApellidoPUser = $Conection->real_escape_string($_POST['ApellidoP']);
+    $ApellidoMUser  = $Conection->real_escape_string($_POST['ApellidoM']);
+    $TelefonoUser = $Conection->real_escape_string($_POST['TelefonoUser']);
+    $EmailUser = $Conection->real_escape_string($_POST['EmailUser']);
+    $FechNacUser = $Conection->real_escape_string($_POST['FechaNacr']);
+
+    // validar que la fecha de nacimiento no sea menor de edad 
+    if (!empty($FechNacUser)) {
+        $fechaHoy = new DateTime();
+        $fechaNacimiento = new DateTime($FechNacUser);
+        $edad = $fechaHoy->diff($fechaNacimiento)->y;
+        if ($edad < 18) {
+            $AlertaError.='<div class="alert alert-danger text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(160, 19, 90,0.8);">
+                                <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> La fecha indiaca que eres menor de edad.</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> ';
+        }
+        
+    }
+
 }
 
 ?>

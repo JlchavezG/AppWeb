@@ -1,6 +1,7 @@
 <?php
 include 'include/conection.php';
 include 'include/login.php';
+include 'include/action.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,15 @@ include 'include/login.php';
         <div class="row mt-2 justify-content-center">
             <h1 class="text-center display-5 fs-3 text">Inicio de <span class="text-primary">sesion Venko</span></h1>
         </div>
-        <div class="row mt-1 mb-1">
+        <div class="row justify-content-center mt-1">
+            <div class="col-sm-12 col-md-10 col-lg-10 text-center">
+                <img src="img/LoginPrincipal.png" alt="login" class="img-fluid">
+            </div>
+        </div>
+        <div class="row mt-1 justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <?php echo $alerta; ?>
+                <div class="row mt-1 mb-1">
             <div class="col-6 mx-auto">
                 <?php
             if (isset($_GET['timeout']) && $_GET['timeout'] == 1) {
@@ -45,14 +54,6 @@ include 'include/login.php';
             ?>
             </div>
         </div>
-        <div class="row justify-content-center mt-1">
-            <div class="col-sm-12 col-md-10 col-lg-10 text-center">
-                <img src="img/LoginPrincipal.png" alt="login" class="img-fluid">
-            </div>
-        </div>
-        <div class="row mt-1 justify-content-center">
-            <div class="col-sm-12 col-md- col-lg-6">
-                <?php echo $alerta; ?>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -85,8 +86,7 @@ include 'include/login.php';
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <input type="submit" name="BtnIngresar" id="BtnIngresar" class="btn btn-sm btn-primary"
-                                value="Ingresar">
+                            <button type="submit" name="BtnIngresar" id="BtnIngresar" class="btn btn-outline-primary">Ingresar</button>
                         </div>
                         <div class="row mt-3 justify-content-center">
                             <div class="col-sm-12 col-md-6 col-lg-6 text-center mt-2">

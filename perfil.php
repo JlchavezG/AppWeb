@@ -3,6 +3,7 @@ session_start();
 include_once('include/conection.php');
 include_once('include/querys.php');
 include_once('include/confing.php');
+include_once('include/action.php');
 include_once('library/phpqrcode/qrlib.php');
 include_once('include/generaQr.php');
 
@@ -10,7 +11,9 @@ $usuario = $_SESSION['Usuario'];
 if (!isset($usuario)) {
     header("location:index");
 }
-
+if(!isset($_GET['id_user'])){
+    header("Location:appweb");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,7 +52,7 @@ if (!isset($usuario)) {
                     <div class="card perfil-card shadow dashboard-card d-flex flex-wrap align-items-center p-3">
                         <!-- Contenido izquierdo -->
                         <div class="card-body text-center flex-grow-1">
-                            <h5 class="perfil-nombre"><?php echo $UserOnline['NombreUser']; ?></h5>
+                            <h5 class="perfil-nombre"><?php echo $saludo." ".$UserOnline['NombreUser']; ?></h5>
                             <p class="card-text text-muted text-break">
                                 <?php echo $UserOnline['NomTuser']; ?> |
                                 <?php echo $UserOnline['EmailUser']; ?>
@@ -62,7 +65,7 @@ if (!isset($usuario)) {
                                     style="display: none;"
                                     onchange="document.getElementById('form-subir-foto').submit();">
                                 <div class="perfil-container" onclick="document.getElementById('file-foto').click();">
-                                    <img src="img/<?php echo $UserOnline['ImgUser']; ?>" alt="Imagen de perfil"
+                                    <img src="img/user/<?php echo $UserOnline['ImgUser']; ?>" alt="Imagen de perfil"
                                         class="imagen-perfil img-fluid">
                                     <div class="hover-text">Cambiar foto</div>
                                 </div>
@@ -70,6 +73,18 @@ if (!isset($usuario)) {
                         </div>
                     </div>
                 </div>
+                <div class="row mt-3 mb-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-end">
+                    <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>"
+                        class="text-decoration-none btn btn-outline-primary">
+                        Editar Password 
+                    </a> &nbsp;&nbsp;
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#UpdateUserModal"
+                            class="text-decoration-none btn btn-outline-primary">
+                        Editar Perfil
+                    </a>
+                </div>
+            </div>
             </div>
 
             <div class="row mt-3 mb-2">
@@ -92,6 +107,22 @@ if (!isset($usuario)) {
                                         <use xlink:href="library/bicons/bootstrap-icons.svg#suitcase-lg-fill" />
                                     </svg>&nbsp; Rol:
                                 </strong> <?php echo $UserOnline['NomTuser']; ?>
+                            </p>
+                            <p class="card-text text-muted mt-2">
+                                <strong>
+                                    <svg class="bi me-1" width="20" height="20" fill="currentColor">
+                                        <use xlink:href="library/bicons/bootstrap-icons.svg#key-fill" />
+                                    </svg>&nbsp; User Nick:
+                                </strong>
+                                <?php echo $UserOnline['UserName']; ?>
+                            </p>
+                            <p class="card-text text-muted mt-2">
+                                <strong>
+                                    <svg class="bi me-1" width="20" height="20" fill="currentColor">
+                                        <use xlink:href="library/bicons/bootstrap-icons.svg#calendar2-week-fill" />
+                                    </svg>&nbsp; Fecha Nacimiento:
+                                </strong>
+                                <?php echo $UserOnline['FechNacUser']; ?>
                             </p>
                             <hr class="dropdown-divider">
                             <p class="fw-lighter">Contacto</p>
@@ -117,15 +148,6 @@ if (!isset($usuario)) {
                                 </strong> <?php echo $UserOnline['FechReg']; ?>
                             </p>
                         </div>
-                        <div class="row mt-1">
-                            <span class="text-end">
-                                <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>">
-                                <svg class="bi me-1" width="20" height="20" fill="currentColor">
-                                    <use xlink:href="library/bicons/bootstrap-icons.svg#pencil-fill" />
-                                </svg>
-                                </a>
-                            </span>
-                        </div>
                     </div>
                 </div>
 
@@ -144,11 +166,11 @@ if (!isset($usuario)) {
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-6 col-md-12 col-lg-6 mt-1">
+                    <div class="row mt-1">
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-1">
                             <div class="card perfil-card shadow dashboard-card  h-100 py-2">
                                 <div class="card-body text-center mt-2">
-                                    <p class="fw-lighter"><strong>Descarga Info de perfil:</strong></p>
+                                    <p class="fw-lighter"><strong>Descarga perfil:</strong></p>
                                     <a href="include/generar-perfil-word.php?id_Usuario=<?php echo $UserOnline['Id_Usuarios']; ?>"
                                         class="text-decoration-none d-block mt-2">
                                         <svg class="bi me-1" width="30" height="30" fill="currentColor">
@@ -158,10 +180,29 @@ if (!isset($usuario)) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-12 col-lg-6 mt-1">
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-1">
                             <div class="card perfil-card shadow dashboard-card  h-100 py-2">
-                                <div class="card-body text-center">
-                                    <img src="<?php echo 'img/qrs/usuario_' . $UserOnline['id'] . '.png'; ?>" alt="QR del Usuario" width="90px">
+                                <div class="card-body text-center mt-2">
+                                    <p class="fw-lighter"><strong>Genera Codigo</strong></p>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#QrUserModal"
+                                        class="text-decoration-none d-block mt-2">
+                                        <svg class="bi me-1" width="30" height="30" fill="currentColor">
+                                            <use xlink:href="library/bicons/bootstrap-icons.svg#qr-code" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-2">
+                            <div class="card perfil-card shadow dashboard-card  h-100 py-2">
+                                <div class="card-body text-center mt-2">
+                                    <p class="fw-lighter"><strong>Fecha</strong></p>
+                                    <a href="#" 
+                                        class="text-decoration-none d-block mt-2">
+                                        <svg class="bi me-1" width="30" height="30" fill="currentColor">
+                                            <use xlink:href="library/bicons/bootstrap-icons.svg#calendar-fill" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -177,6 +218,8 @@ if (!isset($usuario)) {
     </button>
     <!-- T  ermina escritorio-->
     </div>
+    <?php include 'modulo/ModalQrPerfil.php';?>
+    <?php include 'modulo/UpdateUserModal.php';?>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/pace.js"></script>

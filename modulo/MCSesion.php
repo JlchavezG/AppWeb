@@ -6,12 +6,12 @@
         <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
         <span class="text-center">Deceas salir del sistema: <?php echo $UserOnline['NombreUser']." ?"?></span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
-        <a href="include/cerrar.php" class="btn btn-outline-danger">Cerrar Sesion</a>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+        <a href="include/cerrar.php" class="btn btn-outline-primary">Cerrar Sesion</a>
       </div>
     </div>
   </div>
