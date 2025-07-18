@@ -44,7 +44,8 @@ if (isset($_POST['btnAupdateUser'])) {
     $EmailUser = $Conection->real_escape_string($_POST['EmailUser']);
     $FechNacUser = $Conection->real_escape_string($_POST['FechaNacr']);
     $UserNick = $Conection->real_escape_string($_POST['NickUpdate']);
-    $EmailActual = $UserOnline['EmailUser']; // Asegúrate de ajustar esto a tu código
+    $EmailActual = $UserOnline['EmailUser']; 
+    $NickActual = $UserOnline['UserName']; 
     $errores = [];
     // Validación de campos vacíos
     $campos = [
@@ -86,8 +87,10 @@ if (isset($_POST['btnAupdateUser'])) {
                                 <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> La fecha indiaca que eres menor de edad, Por favor verifica tus datos.</span>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div> ';
+            return;                
         }
     } 
+    // verificar si el email existente cambia 
     if($EmailUser !== $EmailActual){
     // validar si el email selccionado ya existe en la base de datos 
     $ValidaEmail = "SELECT EmailUser FROM Usuarios WHERE EmailUser = '$EmailUser'";
@@ -97,19 +100,43 @@ if (isset($_POST['btnAupdateUser'])) {
                                 <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> El email ya se encuentra registrado en la base de datos, Por favor verifica con otro.</span>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div> ';
+            return;                
         }
     }
-
-    
-
+    // verificar si el userNick cambia 
+    if($UserNick != $NickActual){
+    // validar si el UserNick existe en la base de datos 
+    $ValidaNick = "SELECT UserName FROM Usuarios WHERE UserName = '$UserNick'";
+    $ValidandoNick = $Conection->query($ValidaNick);
+    if ($ValidandoNick > 0) {
+            $AlertaError.='<div class="alert alert-danger text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(160, 19, 90,0.8);">
+                                <strong class="text-white"> No puedes actualizar los datos</strong> <span class="text-white"> El UserNick ya se encuentra registrado en la base de datos, Por favor verifica con otro.</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> ';
+            return;                
+        }
     }
-
-
-
-
-
-
+    // actualizar los datos del usuario desde el perfil 
+    $UpdateUserfull = "UPDATE Usuarios SET NombreUser = '$NombreUser', ApellidoP = '$ApellidoPUser', ApellidoM = '$ApellidoMUser', TelefonoUser = '$TelefonoUser', 
+    EmailUser = '$EmailUser', UserName = '$UserNick', FechNacUser = '$FechNacUser' WHERE Id_Usuarios = '$Id_UpdateUser'";
+    $EjUpdateUserfull = $Conection->query($UpdateUserfull);
+    if($EjUpdateUserfull > 0){
+        $AlertaOk.='<div class="alert alert-success text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(76, 182, 34, 0.8);">
+                                <strong class="text-white"> Datos Actualizados</strong> <span class="text-white"> Tus daatos se actualizaron correctamente en breve se actualizaran ...</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> ';
+                            header("Refresh:4; url=perfil");
+    }
+    else{
+        $AlertaError.='<div class="alert alert-danger text-white alert-dismissible fade show shadow" role="alert" style="background-color:rgba(160, 19, 90,0.8);">
+                                <strong class="text-white"> No se pueden actualizar los datos</strong> <span class="text-white"> Existe un error en el proceso, Por favor intenta mas tarde.</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> ';
+            return; 
+    }
+}
 
 }
+
 
 ?>

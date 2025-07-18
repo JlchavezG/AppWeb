@@ -22,7 +22,7 @@ if (!isset($usuario)) {
     <link rel="stylesheet" href="css/Config.css">
     <link rel="icon" href="img/New_Logo_Gris_2023.png" type="image/png">
     <script src="js/jquery.js"></script>
-    <title>Inicio de sistema | MindCare</title>
+    <title>Bienvenido a tu Dashboard | MindCare</title>
 </head>
 
 <body>

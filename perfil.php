@@ -11,7 +11,7 @@ $usuario = $_SESSION['Usuario'];
 if (!isset($usuario)) {
     header("location:index");
 }
-if(!isset($_GET['id_user'])){
+if (!isset($_GET['id_user'])) {
     header("Location:appweb");
 }
 ?>
@@ -49,45 +49,54 @@ if(!isset($_GET['id_user'])){
         <div class="container">
             <div class="row mt-3 mb-3 text-center">
                 <?php echo $AlertaError; ?>
+                <?php echo $AlertaOk; ?>
             </div>
             <div class="row mt-2 mb-2">
                 <div class="col-12">
                     <div class="card perfil-card shadow dashboard-card d-flex flex-wrap align-items-center p-3">
                         <!-- Contenido izquierdo -->
                         <div class="card-body text-center flex-grow-1">
-                            <h5 class="perfil-nombre"><?php echo $saludo." ".$UserOnline['NombreUser']; ?></h5>
+                            <h5 class="perfil-nombre"><?php echo $saludo . " " . $UserOnline['NombreUser']; ?></h5>
                             <p class="card-text text-muted text-break">
                                 <?php echo $UserOnline['NomTuser']; ?> |
                                 <?php echo $UserOnline['EmailUser']; ?>
                             </p>
                         </div>
                         <!-- Imagen de perfil -->
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
                             <form id="form-subir-foto" method="post" enctype="multipart/form-data">
-                                <input type="file" id="file-foto" name="nuevaFoto" accept="image/*"
-                                    style="display: none;"
-                                    onchange="document.getElementById('form-subir-foto').submit();">
+                                <input type="file" id="file-foto" name="nuevaFoto" accept=".jpg, .jpeg, .png"
+                                    style="display: none;" onchange="previewImagen(event)">
+
                                 <div class="perfil-container" onclick="document.getElementById('file-foto').click();">
-                                    <img src="img/user/<?php echo $UserOnline['ImgUser']; ?>" alt="Imagen de perfil"
-                                        class="imagen-perfil img-fluid">
+                                    <img id="img-preview" src="img/user/<?php echo $UserOnline['ImgUser']; ?>"
+                                        alt="Imagen de perfil" class="imagen-perfil img-fluid rounded-circle shadow">
                                     <div class="hover-text">Cambiar foto</div>
+                                </div>
+
+                                <div id="progress-container" class="w-100 mt-2" style="display: none;">
+                                    <div class="progress">
+                                        <div id="progress-bar" class="progress-bar bg-success" style="width: 0%;">0%
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
                 <div class="row mt-3 mb-2">
-                <div class="col-sm-12 col-md-12 col-lg-12 text-end">
-                    <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>"
-                        class="text-decoration-none btn btn-outline-primary">
-                        Editar Password 
-                    </a> &nbsp;&nbsp;
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#UpdateUserModal"
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-end">
+                        <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>"
                             class="text-decoration-none btn btn-outline-primary">
-                        Editar Perfil
-                    </a>
+                            Editar Password
+                        </a> &nbsp;&nbsp;
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#UpdateUserModal"
+                            class="text-decoration-none btn btn-outline-primary">
+                            Editar Perfil
+                        </a>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="row mt-3 mb-2">
@@ -200,8 +209,7 @@ if(!isset($_GET['id_user'])){
                             <div class="card perfil-card shadow dashboard-card  h-100 py-2">
                                 <div class="card-body text-center mt-2">
                                     <p class="fw-lighter"><strong>Fecha</strong></p>
-                                    <a href="#" 
-                                        class="text-decoration-none d-block mt-2">
+                                    <a href="#" class="text-decoration-none d-block mt-2">
                                         <svg class="bi me-1" width="30" height="30" fill="currentColor">
                                             <use xlink:href="library/bicons/bootstrap-icons.svg#calendar-fill" />
                                         </svg>
@@ -221,8 +229,8 @@ if(!isset($_GET['id_user'])){
     </button>
     <!-- T  ermina escritorio-->
     </div>
-    <?php include 'modulo/ModalQrPerfil.php';?>
-    <?php include 'modulo/UpdateUserModal.php';?>
+    <?php include 'modulo/ModalQrPerfil.php'; ?>
+    <?php include 'modulo/UpdateUserModal.php'; ?>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/pace.js"></script>
