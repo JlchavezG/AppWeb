@@ -66,23 +66,17 @@ if (!isset($_GET['id_user'])) {
                         <div class="d-flex justify-content-center align-items-center flex-column">
                             <form id="form-subir-foto" method="post" enctype="multipart/form-data">
                                 <input type="file" id="file-foto" name="nuevaFoto" accept=".jpg, .jpeg, .png"
-                                    style="display: none;" onchange="previewImagen(event)">
+                                    style="display: none;" onchange="mostrarPreview(event)">
+
+                                <input type="hidden" name="accion" value="subir_imagen">
 
                                 <div class="perfil-container" onclick="document.getElementById('file-foto').click();">
                                     <img id="img-preview" src="img/user/<?php echo $UserOnline['ImgUser']; ?>"
                                         alt="Imagen de perfil" class="imagen-perfil img-fluid rounded-circle shadow">
                                     <div class="hover-text">Cambiar foto</div>
                                 </div>
-
-                                <div id="progress-container" class="w-100 mt-2" style="display: none;">
-                                    <div class="progress">
-                                        <div id="progress-bar" class="progress-bar bg-success" style="width: 0%;">0%
-                                        </div>
-                                    </div>
-                                </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
                 <div class="row mt-3 mb-2">
@@ -216,6 +210,11 @@ if (!isset($_GET['id_user'])) {
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1 mb-1">
+                        <div class="col mt-3 mb-3 text-center">
+                            <span class="text-muted"> Hoy es: <?php echo $fecha; ?></span>
                         </div>
                     </div>
                 </div>

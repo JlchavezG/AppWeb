@@ -59,7 +59,7 @@ $UserOnline = $EIngresaUser->fetch_array();
 
 // configurar la zona horaria de nuestro servidor
 ini_Set('date.timezone', 'America/Mexico_City');
-$fecha = date('Y-m-d');
+$fecha = date('d \d\e F \d\e Y \a \l\a\s h:i A');
 $tiempo = date('H:i:s');
 $hora = date('H');
 

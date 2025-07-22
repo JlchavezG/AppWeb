@@ -137,6 +137,8 @@ if (isset($_POST['btnAupdateUser'])) {
 }
 
 }
-
+// validacion y accion de actualizaar la imagen de perfil 
+$userId = $UserOnline['Id_Usuarios'];
+// carpeta destino 
 
 ?>
