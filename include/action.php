@@ -137,8 +137,12 @@ if (isset($_POST['btnAupdateUser'])) {
 }
 
 }
-// validacion y accion de actualizaar la imagen de perfil 
-$userId = $UserOnline['Id_Usuarios'];
-// carpeta destino 
 
+// recuperacion de password
+if(isset($_POST['btnUpdatePass'])){
+$IdPassUpdate = $Conection->real_escape_string($_POST['idUserPass']);
+$PassModificado = $Conection->real_escape_string($_POST['passnew']);
+// realizar la consulta para verificar que el password exista 
+
+}
 ?>

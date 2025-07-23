@@ -81,13 +81,15 @@ if (!isset($_GET['id_user'])) {
                 </div>
                 <div class="row mt-3 mb-2">
                     <div class="col-sm-12 col-md-12 col-lg-12 text-end">
-                        <a href="EdirPerfilUser?Id_User=<?php echo $UserOnline['Id_Usuarios']; ?>"
-                            class="text-decoration-none btn btn-outline-primary">
-                            Editar Password
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#ModalUpdatePass" class="text-decoration-none btn btn-outline-primary">
+                            <svg class="bi me-1" width="15" height="15" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#lock-fill" />
+                            </svg>&nbsp; Editar Password
                         </a> &nbsp;&nbsp;
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#UpdateUserModal"
-                            class="text-decoration-none btn btn-outline-primary">
-                            Editar Perfil
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#UpdateUserModal" class="text-decoration-none btn btn-outline-primary">
+                            <svg class="bi me-1" width="15" height="15" fill="currentColor">
+                                <use xlink:href="library/bicons/bootstrap-icons.svg#pencil-fill" />
+                            </svg>&nbsp;Editar Perfil
                         </a>
                     </div>
                 </div>
@@ -230,6 +232,7 @@ if (!isset($_GET['id_user'])) {
     </div>
     <?php include 'modulo/ModalQrPerfil.php'; ?>
     <?php include 'modulo/UpdateUserModal.php'; ?>
+    <?php include 'modulo/ModalUpdatePass.php';?>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/pace.js"></script>
